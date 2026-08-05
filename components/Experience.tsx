@@ -8,7 +8,7 @@ const experiences = [
   {
     year: "2026",
     period: "2026 — Presente",
-    role: "Software Engineer Freelancer",
+    role: "Software Engineer",
     company: "Projetos Independentes",
     icon: Laptop,
     badge: "Atual",
