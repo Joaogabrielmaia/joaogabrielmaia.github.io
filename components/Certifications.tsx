@@ -6,7 +6,7 @@ import { ExternalLink, ShieldCheck, CheckCircle } from "lucide-react";
 
 const certifications = [
   {
-    title: "Desenvolvimento Web Moderno com JS & React",
+    title: "Curso Web Moderno Completo com JavaScript",
     issuer: "Udemy / Web Development",
     category: "Desenvolvimento Software",
     description: "JavaScript moderno ES6+, React, Node.js, arquitetura web e padrões de desenvolvimento de software.",
@@ -14,7 +14,7 @@ const certifications = [
     url: "https://www.udemy.com/certificate/UC-39b7e3e4-3f58-489e-955a-9ac5601972bb/",
   },
   {
-    title: "Arquitetura de Banco de Dados SQL & PostgreSQL",
+    title: "Banco de Dados SQL do Básico ao Avançado",
     issuer: "Udemy / Database",
     category: "Desenvolvimento & Dados",
     description: "Modelagem relacional, queries avançadas, otimização e gerenciamento relacional de dados.",
@@ -22,7 +22,7 @@ const certifications = [
     url: "https://www.udemy.com/certificate/UC-8e3e5ec0-4f34-4de1-9d5d-42abf8018289/",
   },
   {
-    title: "Google AI & Machine Learning Specialization",
+    title: "Google AI Essentials",
     issuer: "Coursera / Google",
     category: "Inteligência Artificial",
     description: "Conceitos fundamentais de IA Generativa, engenharia de prompts e aplicação de LLMs na solução de problemas.",
@@ -30,23 +30,23 @@ const certifications = [
     url: "https://www.coursera.org/account/accomplishments/specialization/KYYB1071VUYT",
   },
   {
-    title: "IBM Applied AI Foundations",
-    issuer: "Credly / IBM",
+    title: "Career Essentials in Generative AI — Microsoft & LinkedIn",
+    issuer: "Microsoft & LinkedIn",
+    category: "Inteligência Artificial",
+    description: "Fundamentos de IA generativa, ética em inteligência artificial e transformação digital.",
+    code: "MS-LINKEDIN-AI",
+    url: "https://www.linkedin.com/learning/certificates/career-essentials-in-generative-ai",
+  },
+  {
+    title: "IBM SkillsBuild — Getting Started with Generative AI",
+    issuer: "IBM / Credly",
     category: "Inteligência Artificial",
     description: "Construção de aplicações com IA, redes neurais e processamento de linguagem natural.",
     code: "F49C52E3-4F58",
     url: "https://www.credly.com/badges/f49c52e3-4f58-4c8a-8e11-cf80af175739",
   },
   {
-    title: "Power BI & Analytics Executivo",
-    issuer: "Udemy / Analytics Executivo",
-    category: "Dados & Dashboards",
-    description: "Modelagem de dados com DAX, dashboards executivos para tomada de decisão e indicadores estratégicos.",
-    code: "UC-fdd87f9d-16c2",
-    url: "https://www.udemy.com/certificate/UC-fdd87f9d-16c2-4e1b-807d-e8eb12d7500d/",
-  },
-  {
-    title: "Gestão Ágil de Projetos & Scrum",
+    title: "Gestão de Projetos e Scrum",
     issuer: "Udemy / Agile Management",
     category: "Gestão & Produto",
     description: "Frameworks ágeis Scrum/Kanban, refinamento de backlog, sprint planning e facilitação de discovery.",

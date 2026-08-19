@@ -18,14 +18,14 @@ const experiences = [
   },
   {
     year: "2025",
-    period: "2025 — 2026",
-    role: "IT Support Apprentice",
+    period: "jul/2025 — mar/2026",
+    role: "Aprendiz de Suporte de TI",
     company: "Hotmart",
     icon: Building2,
     badge: "Corporativo",
     description:
-      "Atendimento técnico e suporte a sistemas corporativos internos. Apoio na organização de chamados, suporte a equipes e apoio a processos operacionais de TI.",
-    tags: ["Suporte a Sistemas", "Processos de TI", "SaaS"],
+      "Gerenciamento de chamados via Jira, suporte técnico a usuários internos, participação em rollouts corporativos, automações de suporte, administração de MDM (Workspace ONE) e infraestrutura de TI.",
+    tags: ["Jira", "Suporte a Sistemas", "Workspace ONE (MDM)", "Processos de TI"],
   },
   {
     year: "2023",
