@@ -6,24 +6,24 @@ import { Compass, Cpu, Target, Rocket } from "lucide-react";
 
 const pillars = [
   {
-    icon: Compass,
-    title: "Discovery & Requisitos",
-    description: "Levantamento de requisitos e entendimento das necessidades do projeto.",
-  },
-  {
-    icon: Target,
-    title: "Gestão Ágil",
-    description: "Organização e acompanhamento de entregas utilizando Scrum e Kanban.",
+    icon: Rocket,
+    title: "Engenharia Full Stack",
+    description: "Desenvolvimento web moderno de ponta a ponta com JavaScript, TypeScript, React, Next.js e Node.js.",
   },
   {
     icon: Cpu,
-    title: "IA & Automação",
-    description: "Uso de APIs de Inteligência Artificial e automação de fluxos.",
+    title: "Arquitetura & Dados",
+    description: "Modelagem relacional de dados (PostgreSQL/SQLite), desenvolvimento de APIs REST e integrações.",
   },
   {
-    icon: Rocket,
-    title: "Engenharia de Software",
-    description: "Desenvolvimento de aplicações web com Next.js, Node.js, TypeScript e PostgreSQL.",
+    icon: Target,
+    title: "IA & Automação",
+    description: "Integração de APIs de Inteligência Artificial, engenharia de prompts, agentes e automação de processos.",
+  },
+  {
+    icon: Compass,
+    title: "Requisitos & Negócio",
+    description: "Levantamento de requisitos, regras de negócio, especificações funcionais e metodologias ágeis (Scrum).",
   },
 ];
 
@@ -33,7 +33,7 @@ export function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Sobre"
-          title="Engenharia de Software e Gestão de Projetos"
+          title="Engenharia de Software e Desenvolvimento Full Stack"
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -50,23 +50,20 @@ export function About() {
             <div className="relative z-10 space-y-6">
               <p className="text-base sm:text-lg font-normal text-[#0F0F10] leading-relaxed">
                 Graduando em Engenharia de Software pela{" "}
-                <span className="font-semibold text-[#0F0F10]">PUC Minas</span>. Atuo no
-                desenvolvimento de software, participando do levantamento de requisitos,
-                organização de tarefas com metodologias ágeis e implementação de
-                aplicações web.
+                <span className="font-semibold text-[#0F0F10]">PUC Minas</span>, construo aplicações web Full Stack unindo arquitetura de software, engenharia de dados e Inteligência Artificial. Minha atuação abrange desde a modelagem de banco de dados e desenvolvimento de APIs REST no backend até a criação de interfaces reativas no frontend, aplicando conhecimentos de requisitos e metodologias ágeis como aceleradores de entregas técnicas.
               </p>
 
-              {/* Direcionamento Profissional */}
+              {/* Visão Técnica & Engenharia Full Stack */}
               <div className="p-5 rounded-2xl bg-[#0F0F10] text-[#FAFAFA] border border-neutral-800 flex items-start gap-4">
                 <div className="p-2.5 rounded-xl bg-[#B8FF2C] text-[#0F0F10] shrink-0 font-bold">
                   <Cpu className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-mono uppercase tracking-wider text-[#B8FF2C] mb-1.5 font-semibold">
-                    Direcionamento Profissional
+                    Visão Técnica & Engenharia Full Stack
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed font-normal">
-                    Atualmente concentro minha evolução em Gestão de Projetos e Produtos. Após meu primeiro contato com a área na graduação, aprofundei meus estudos em Scrum, PMBOK, Gestão de Produtos, Business Intelligence e Inteligência Artificial aplicada à otimização de processos e apoio à tomada de decisões, direcionando minha carreira para a gestão estratégica de projetos e produtos, conectando tecnologia, pessoas e objetivos de negócio.
+                    Minha trajetória é focada no desenvolvimento de software de ponta a ponta. Atuo na construção de aplicações robustas com JavaScript, TypeScript, React, Next.js, Node.js e banco de dados relacional, integrando modelos de IA e automações para resolver problemas complexos. Compreender requisitos, regras de negócio e dinâmicas ágeis (Scrum/Kanban) amplia minha capacidade de arquitetar soluções completas e alinhadas aos objetivos de produtos reais.
                   </p>
                 </div>
               </div>

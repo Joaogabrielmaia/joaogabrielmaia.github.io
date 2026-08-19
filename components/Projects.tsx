@@ -12,21 +12,22 @@ const projectsList: ProjectData[] = [
   {
     id: "gerencie-ja",
     title: "GerêncieJá",
-    subtitle: "Sistema de Gestão de Projetos e Métricas Ágeis",
+    subtitle: "Aplicação Full Stack para Gestão de Tarefas e Métricas Operacionais",
     description:
-      "Plataforma para acompanhamento de tarefas, métricas de entregas (Lead Time, Cycle Time, Velocity) e gráficos de burndown em sprints.",
+      "Aplicação Full Stack desenvolvida em Node.js e Express sob arquitetura MVC, utilizando SQLite3 para persistência relacional de dados e EJS para renderização server-side, oferecendo gerenciamento de tarefas, quadros Kanban e cálculo de métricas de sprint (Lead Time, Cycle Time, Velocity e Burndown).",
     longDescription:
-      "O GerêncieJá foi desenvolvido para facilitar a gestão de tarefas e a visibilidade de métricas ágeis. Permite acompanhar prazos, alocação de equipe, distribuição de tarefas por prioridade e gráficos de desempenho de sprint.",
+      "O GerêncieJá é uma plataforma web full stack projetada para gerenciamento de fluxo de trabalho. A aplicação possui backend estruturado em Node.js e Express seguindo a arquitetura MVC, banco de dados relacional SQLite3 e renderização server-side com EJS, permitindo o acompanhamento de projetos, alocação de equipes e cálculo automatizado de métricas operacionais.",
     image: "/projects/gerencie-ja.png",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
+    tags: ["Node.js", "Express", "SQLite3", "EJS", "JavaScript", "Arquitetura MVC"],
     features: [
-      "Indicadores de Performance: Lead Time, Cycle Time, Velocity & Throughput",
-      "Quadros de Distribuição de Status e Tarefas por Prioridade",
-      "Acompanhamento de Burndown da Sprint Ativa",
-      "Gestão de Projetos e Tarefas da Equipe",
+      "Arquitetura MVC desenvolvida em Node.js, Express e JavaScript",
+      "Persistência e modelagem relacional de dados em banco de dados SQLite3",
+      "Renderização dinâmica de visões server-side utilizando EJS",
+      "Módulos para gestão de tarefas, quadros Kanban, metas e acompanhamento de sprints",
+      "Cálculo e exibição de métricas operacionais (Lead Time, Cycle Time, Velocity e Burndown)",
     ],
     metrics: [
-      "Visualização completa do fluxo de trabalho da equipe",
+      "Visualização estruturada do fluxo de trabalho e métricas operacionais de desempenho",
     ],
     demoUrl: "https://gerencieja.onrender.com/projects",
     githubUrl: "https://github.com/Joaogabrielmaia/GerencieJa",
@@ -35,21 +36,22 @@ const projectsList: ProjectData[] = [
   {
     id: "pm-copilot",
     title: "PM Copilot",
-    subtitle: "Assistente de IA para Gestão de Projetos",
+    subtitle: "Assistente Web de IA para Automação de Processos e Documentação Técnica",
     description:
-      "Sistema baseado em Inteligência Artificial para auxiliar no planejamento, priorização de backlog, análise de sprints e estruturação de reuniões.",
+      "Aplicação de Engenharia de Software desenvolvida em Node.js e Express, integrada à API da Groq (modelo Llama 3.1) para processamento de informações, geração automatizada de especificações técnicas, User Stories e análises de requisitos.",
     longDescription:
-      "O PM Copilot oferece templates inteligentes para apoiar a organização de projetos. Auxilia na elaboração de planos de ação, análise de riscos, planejamento de sprints e geração automatizada de atas e requisitos.",
+      "O PM Copilot é uma aplicação de Engenharia de Software + Inteligência Artificial construída para automatizar a geração de documentação e análise de requisitos. A solução conecta backend em Node.js e Express à API da Groq via SDK oficial, utilizando banco de dados SQLite (sql.js) para armazenamento de configurações e histórico, e engenharia de prompts estruturada para extração e síntese de informações.",
     image: "/projects/pm-copilot.png",
-    tags: ["OpenAI API", "Claude API", "Python", "Node.js", "Next.js", "Prompt Engineering"],
+    tags: ["Node.js", "Express", "Groq API", "Llama 3.1", "SQLite", "Prompt Engineering"],
     features: [
-      "Templates para Análise de Sprint, Plano de Ação e Matriz de Riscos",
-      "Ferramentas de Priorização de Backlog (RICE / MoSCoW)",
-      "Planejamento de Reuniões e Geração de Atas",
-      "Gerador de User Stories e Critérios de Aceitação",
+      "Integração backend com a API da Groq (modelo Llama 3.1) via SDK oficial",
+      "Engenharia de Prompt estruturada para geração automatizada de User Stories e especificações técnicas",
+      "Persistência de histórico de sessões e configurações via banco de dados SQLite (sql.js)",
+      "Endpoints de API REST para comunicação entre cliente e serviços de IA",
+      "Interface web responsiva para interação fluida com o assistente inteligente",
     ],
     metrics: [
-      "Apoio prático na documentação e organização de projetos",
+      "Processamento automatizado de requisições e geração sintética de especificações técnicas",
     ],
     demoUrl: "https://pmcopilot.onrender.com/",
     githubUrl: "https://github.com/Joaogabrielmaia/PMCopilot",
@@ -57,25 +59,26 @@ const projectsList: ProjectData[] = [
   {
     id: "power-bi",
     title: "Dashboard Executivo Power BI",
-    subtitle: "Analytics de Indicadores de Projetos",
+    subtitle: "Analytics & Modelagem de Dados para Indicadores Operacionais",
     description:
-      "Dashboard executivo para acompanhamento visual de desvio financeiro, budget, custo por projeto, velocidade de sprint e saúde dos projetos.",
+      "Projeto de Business Intelligence e Data Analytics focado na modelagem relacional de dados, tratamento de bases complexas com SQL/Excel, desenvolvimento de medidas calculadas em DAX e criação de painéis executivos interativos.",
     longDescription:
-      "Dashboard desenvolvido para acompanhamento visual de projetos. Consolida métricas de orçamento x custo real, evolução de velocidade por sprint, bugs por projeto, alocação de equipe e distribuição de saúde financeira dos projetos.",
+      "Solução de Data Analytics desenvolvida para estruturar e visualizar indicadores operacionais e financeiros. Envolveu tratamento e higienização de dados, modelagem dimensional em esquema estrela, cálculos avançados em DAX e construção de relatórios executivos interativos no Power BI para apoio à tomada de decisão.",
     image: "/projects/powerbi-1.png",
     images: [
       "/projects/powerbi-1.png",
       "/projects/powerbi-2.png",
       "/projects/powerbi-3.png",
     ],
-    tags: ["Power BI", "DAX", "SQL", "Microsoft Excel", "KPIs Executivos", "Data Modeling"],
+    tags: ["Power BI", "DAX", "SQL", "Data Modeling", "Business Intelligence", "Analytics"],
     features: [
-      "Visão 1: Índice de Satisfação, Lead Time, Custo Total x Budget & Bugs",
-      "Visão 2: Gestão de Tarefas, Horas Estimadas x Trabalhadas & Prioridades",
-      "Visão 3: Desvio Financeiro por Projeto, Budget & Saúde dos Projetos",
+      "Modelagem dimensional de dados (Esquema Estrela) e estruturação de relacionamentos",
+      "Desenvolvimento de medidas e KPIs executivos complexos utilizando linguagem DAX",
+      "Tratamento, transformação e higienização de bases de dados relacionais com SQL",
+      "Visualizações executivas interativas para análise de custos, recursos e indicadores",
     ],
     metrics: [
-      "Visualização consolidada de indicadores de desempenho, recursos e orçamento",
+      "Painéis consolidados com suporte à tomada de decisão baseada em dados",
     ],
   },
 ];
@@ -91,8 +94,8 @@ export function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Projetos"
-          title="Projetos Práticos"
-          description="Desenvolvo aplicações web focadas em problemas práticos. Estou estudando Gestão de Projetos para unir esse conhecimento ao desenvolvimento de software e construir soluções mais completas."
+          title="Projetos de Software & Soluções Técnicas"
+          description="Aplicações web full stack, soluções integradas com Inteligência Artificial e projetos de análise de dados desenvolvidos com foco em arquitetura, código funcional e resolução de problemas reais."
         />
 
         {/* HERO PROJECT CARD (GERÊNCIEJÁ) */}

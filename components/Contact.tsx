@@ -78,7 +78,7 @@ export function Contact() {
         <SectionHeader
           badge="Contato"
           title="Vamos conversar?"
-          description="Estou aberto a oportunidades em Engenharia de Software, Gestão de Projetos e Inteligência Artificial."
+          description="Estou aberto a oportunidades em Engenharia de Software, Desenvolvimento Full Stack e projetos com Inteligência Artificial."
           centered
         />
 

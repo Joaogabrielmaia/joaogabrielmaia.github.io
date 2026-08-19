@@ -8,13 +8,13 @@ const experiences = [
   {
     year: "2026",
     period: "2026 — Presente",
-    role: "Software Engineer",
-    company: "Projetos Independentes",
+    role: "Desenvolvedor Full Stack — Projetos de Software",
+    company: "Atuação Autônoma / Projetos em Equipe",
     icon: Laptop,
     badge: "Atual",
     description:
-      "Desenvolvimento de aplicações web utilizando Next.js, TypeScript e Node.js. Levantamento de requisitos, aplicação de práticas ágeis com Scrum e integração de Inteligência Artificial em soluções de software.",
-    tags: ["Next.js", "TypeScript", "Scrum", "Discovery", "IA"],
+      "Desenvolvimento de aplicações web Full Stack (Node.js, Express, Next.js, TypeScript, React). Atuação em decisões técnicas, arquitetura de software, levantamento de requisitos, regras de negócio, modelagem de banco de dados relacional (PostgreSQL/SQLite), APIs REST, integrações de IA, automações, testes e facilitação com Scrum em projetos para clientes.",
+    tags: ["Desenvolvimento Full Stack", "Arquitetura Web", "APIs REST", "Banco de Dados", "IA & Automação", "Scrum"],
   },
   {
     year: "2025",

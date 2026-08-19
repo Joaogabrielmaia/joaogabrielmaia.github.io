@@ -30,7 +30,7 @@ export function Footer() {
             </div>
 
             <p className="text-xs text-neutral-400 leading-relaxed max-w-md font-normal">
-              Desenvolvimento de software, metodologias ágeis e Inteligência Artificial para a construção de soluções escaláveis.
+              Desenvolvimento de aplicações web Full Stack, arquitetura de sistemas e Inteligência Artificial para a construção de soluções escaláveis.
             </p>
           </div>
 
@@ -41,9 +41,9 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-neutral-300 font-medium">
               <li>Software Engineering</li>
-              <li>Project Management (Scrum/Kanban)</li>
-              <li>Discovery & Requisitos</li>
-              <li>Artificial Intelligence</li>
+              <li>Full Stack Web Development</li>
+              <li>Artificial Intelligence & Automation</li>
+              <li>Requisitos & Metodologias Ágeis</li>
             </ul>
           </div>
 

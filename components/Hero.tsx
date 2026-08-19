@@ -42,12 +42,12 @@ export function Hero() {
             {/* Sub-headline Pill / Role */}
             <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-semibold px-3.5 py-1.5 rounded-md bg-[#B8FF2C] text-[#0F0F10] mb-6 shadow-sm">
               <Sparkles className="w-4 h-4" />
-              <span>Software Engineer • Gestão de Produtos e Projetos • AI</span>
+              <span>Software Engineer • Full Stack Developer • AI</span>
             </div>
 
             {/* Bio Text */}
             <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mb-8 font-normal">
-              Graduando em Engenharia de Software pela PUC Minas, estudando Gestão de Projetos e Inteligência Artificial, e desenvolvendo aplicações web.
+              Graduando em Engenharia de Software pela PUC Minas, desenvolvendo aplicações web Full Stack com JavaScript, TypeScript, React, Next.js, Node.js, PostgreSQL, APIs REST e Inteligência Artificial, utilizando conhecimentos de requisitos e negócios como diferencial.
             </p>
 
             {/* CTA Buttons */}

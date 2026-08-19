@@ -49,7 +49,7 @@ export function Navbar() {
                 João Gabriel
               </span>
               <span className="text-[11px] text-neutral-500 font-mono">
-                Software Engineer
+                Software Engineer • Full Stack
               </span>
             </div>
           </a>

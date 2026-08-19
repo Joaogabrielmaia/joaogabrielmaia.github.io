@@ -11,7 +11,7 @@ export function Journey() {
         <SectionHeader
           badge="Minha Jornada"
           title="Trajetória e Formação"
-          description="Desenvolvimento de software e estudo contínuo em gestão de entregas."
+          description="Desenvolvimento de aplicações web Full Stack, arquitetura de sistemas e constante evolução técnica."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -43,10 +43,10 @@ export function Journey() {
               <ul className="space-y-3 mt-4">
                 {[
                   "Desenvolvimento Full Stack",
-                  "Scrum",
-                  "Discovery",
-                  "Levantamento de Requisitos",
+                  "Arquitetura & APIs REST",
+                  "Banco de Dados & SQL",
                   "Inteligência Artificial",
+                  "Requisitos & Scrum",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2.5 text-xs text-neutral-700 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-[#0F0F10] shrink-0" />
@@ -97,7 +97,7 @@ export function Journey() {
 
               <p className="text-xs text-neutral-600 leading-relaxed">
                 Graduação focada em desenvolvimento de software, estruturas de dados,
-                arquitetura de sistemas e projetos práticos.
+                arquitetura de sistemas, bancos de dados e projetos práticos.
               </p>
             </div>
 
@@ -128,17 +128,17 @@ export function Journey() {
               </div>
 
               <h3 className="text-xl font-bold text-[#0F0F10] mb-4">
-                Áreas de Estudo
+                Foco Técnico
               </h3>
 
               <div className="flex flex-wrap gap-2.5">
                 {[
-                  "Estudos em Gestão de Projetos",
                   "Software Engineering",
-                  "Agile Frameworks",
+                  "Full Stack Development",
+                  "Next.js & Node.js",
+                  "PostgreSQL & SQL",
                   "Artificial Intelligence",
                   "Process Automation",
-                  "Data Analytics",
                 ].map((tag) => (
                   <span
                     key={tag}
@@ -152,7 +152,7 @@ export function Journey() {
 
             <div className="mt-8 pt-4 border-t border-neutral-200/80 flex items-center justify-between">
               <span className="text-[11px] font-mono text-neutral-500">Objetivo</span>
-              <span className="text-xs font-bold text-[#0F0F10]">Evolução em Gestão de Projetos</span>
+              <span className="text-xs font-bold text-[#0F0F10]">Engenharia de Software & Full Stack</span>
             </div>
           </motion.div>
 
