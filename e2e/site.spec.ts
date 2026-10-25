@@ -50,7 +50,7 @@ test.describe("fluxos principais", () => {
     await expect(botao).toHaveAttribute("aria-expanded", "false");
     await botao.click();
     await expect(botao).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText("Git e GitHub: repositório, commit e versões")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Git e GitHub: repositório, commit e versões" })).toBeVisible();
 
     await page.goto("/#competencias");
     const b2 = page.getByRole("button", { name: "Ver todas as competências" });
