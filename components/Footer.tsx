@@ -1,11 +1,24 @@
-"use client";
-
 import Link from "next/link";
-import { ArrowUp, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./ui/Icons";
-import { profile } from "@/content";
+import { ScrollTopButton } from "./ui/ScrollTopButton";
+import { getContent } from "@/content";
+import { ui } from "@/content/ui";
+import { routes } from "@/content/routes";
+import type { Lang } from "@/content/lang";
 
-export function Footer() {
+export function Footer({ lang }: { lang: Lang }) {
+  const { profile } = getContent(lang);
+  const t = ui[lang];
+  const r = routes(lang);
+  const links: [string, string][] = [
+    [t.nav.areas, r.areas],
+    [t.nav.projects, r.projects],
+    [t.nav.experience, r.experience],
+    [t.nav.about, r.about],
+    [t.nav.contact, r.contact],
+  ];
+
   return (
     <footer className="relative z-10 mt-12 rounded-t-[3rem] bg-[#4f5c35] pt-16 pb-10 text-[#f3f3e8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,30 +28,24 @@ export function Footer() {
             <p className="mt-3 max-w-md text-sm text-[#e6ebd2]">{profile.hero.subtitulo}</p>
           </div>
 
-          <nav aria-label="Rodapé" className="md:col-span-3">
-            <p className="font-display font-bold mb-3">Navegar</p>
+          <nav aria-label={t.footer.nav} className="md:col-span-3">
+            <p className="font-display font-bold mb-3">{t.footer.navigate}</p>
             <ul className="space-y-2 text-sm text-[#e6ebd2]">
-              {[
-                ["Áreas", "/#areas"],
-                ["Projetos", "/projetos"],
-                ["Experiência", "/#experiencia"],
-                ["Sobre", "/sobre"],
-                ["Contato", "/#contato"],
-              ].map(([n, h]) => (
+              {links.map(([n, h]) => (
                 <li key={n}>
-                  <Link href={h} className="hover:text-[#F29A0F] hover:underline underline-offset-2">{n}</Link>
+                  <Link href={h} className="hover:text-[#F29A0F]">{n}</Link>
                 </li>
               ))}
             </ul>
           </nav>
 
           <div className="md:col-span-3">
-            <p className="font-display font-bold mb-3">Contato</p>
+            <p className="font-display font-bold mb-3">{t.footer.contact}</p>
             <div className="flex gap-2">
               {[
                 { href: profile.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
                 { href: profile.github, label: "GitHub", Icon: GithubIcon },
-                { href: `mailto:${profile.email}`, label: "E-mail", Icon: Mail },
+                { href: `mailto:${profile.email}`, label: t.footer.email, Icon: Mail },
               ].map(({ href, label, Icon }) => (
                 <a
                   key={label}
@@ -57,12 +64,7 @@ export function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 pt-6 text-xs text-[#c9d2ac] sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {profile.nomeCompleto}</p>
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 hover:border-[#F29A0F] hover:text-white"
-          >
-            Voltar ao topo <ArrowUp className="h-3.5 w-3.5" aria-hidden />
-          </button>
+          <ScrollTopButton label={t.footer.backToTop} />
         </div>
       </div>
     </footer>

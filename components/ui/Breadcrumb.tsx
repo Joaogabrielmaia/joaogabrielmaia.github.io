@@ -3,10 +3,10 @@ import { BackLink } from "./BackLink";
 
 export type Crumb = { rotulo: string; href?: string };
 
-export function Breadcrumb({ itens, voltarPara }: { itens: Crumb[]; voltarPara: string }) {
+export function Breadcrumb({ itens, voltarPara, ariaLabel, voltar }: { itens: Crumb[]; voltarPara: string; ariaLabel: string; voltar: string }) {
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 pb-6">
-      <nav aria-label="Você está em" className="text-sm text-neutral-600">
+      <nav aria-label={ariaLabel} className="text-sm text-neutral-600">
         <ol className="flex flex-wrap items-center gap-2">
           {itens.map((c, i) => (
             <li key={c.rotulo} className="flex items-center gap-2">
@@ -15,7 +15,7 @@ export function Breadcrumb({ itens, voltarPara }: { itens: Crumb[]; voltarPara: 
                   {c.rotulo}
                 </Link>
               ) : (
-                <span aria-current="page" className="font-semibold text-[#161616]">
+                <span aria-current="page" className="font-semibold text-(color:--ink)">
                   {c.rotulo}
                 </span>
               )}
@@ -24,7 +24,7 @@ export function Breadcrumb({ itens, voltarPara }: { itens: Crumb[]; voltarPara: 
           ))}
         </ol>
       </nav>
-      <BackLink fallback={voltarPara} />
+      <BackLink fallback={voltarPara}>{voltar}</BackLink>
     </div>
   );
 }

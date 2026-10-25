@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const ACCENT = "242, 154, 15"; // laranja #F29A0F
-const INK = "40, 40, 40";
+let INK = "40, 40, 40"; // atualizado a partir de --ink-rgb (muda com o tema)
 const LINK_DIST = 140;
 const MOUSE_DIST = 190;
 
@@ -66,6 +66,9 @@ export function ParticleWaveCanvas() {
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
       t += 0.01;
+      if (Math.round(t * 100) % 30 === 0) {
+        INK = getComputedStyle(document.documentElement).getPropertyValue("--ink-rgb").trim() || INK;
+      }
 
       for (const n of nodes) {
         // atração suave ao cursor

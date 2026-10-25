@@ -11,7 +11,7 @@ export const profile = ProfileSchema.parse({
     titulo: "João Gabriel Maia",
     subtitulo: "Software Engineer · Automação com IA · Gestão de projetos",
     frase:
-      "Full stack com TypeScript, React, Next.js, Node.js e PostgreSQL. Construo automações, agentes de IA e integrações por API, com testes automatizados e decisões documentadas.",
+      "Sou João Gabriel, estudante de Engenharia de Software na PUC Minas. Desenvolvo aplicações full stack, automações e agentes de IA, e também conduzo projetos com Scrum e levantamento de requisitos.",
     selo: "Engenharia de Software · PUC Minas",
   },
   pontos: [

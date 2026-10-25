@@ -1,284 +1,176 @@
 "use client";
 
-import { useState, useRef, FormEvent } from "react";
-import { motion } from "framer-motion";
-import { SectionHeader } from "./ui/SectionHeader";
+import { useState, type FormEvent } from "react";
 import { Send, CheckCircle2, AlertCircle, Mail, Building2, User, MessageSquare } from "lucide-react";
+import { SectionHeader } from "./ui/SectionHeader";
 import { GithubIcon, LinkedinIcon } from "./ui/Icons";
+import { ui } from "@/content/ui";
+import type { Lang } from "@/content/lang";
 
-export function Contact() {
-  const formRef = useRef<HTMLFormElement>(null);
+type Props = { lang: Lang; email: string; linkedin: string; github: string };
 
-  const [formData, setFormData] = useState({
-    user_name: "",
-    user_email: "",
-    user_company: "",
-    message: "",
-  });
+const campo =
+  "w-full pl-10 pr-4 py-3 rounded-xl bg-(color:--card) border border-[#7a8c57]/40 text-sm text-(color:--ink) placeholder:text-neutral-500 focus:outline-none focus:border-[#F29A0F] focus:ring-2 focus:ring-[#F29A0F]/60 transition-colors";
+const rotulo = "block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2 font-mono";
 
+export function Contact({ lang, email, linkedin, github }: Props) {
+  const t = ui[lang].contact;
+  const [dados, setDados] = useState({ user_name: "", user_email: "", user_company: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [erro, setErro] = useState("");
 
-  const handleSubmit = async (e: FormEvent) => {
+  const enviar = async (e: FormEvent) => {
     e.preventDefault();
-
-    if (!formData.user_name || !formData.user_email || !formData.message) {
+    if (!dados.user_name || !dados.user_email || !dados.message) {
       setStatus("error");
-      setErrorMessage("Por favor, preencha todos os campos obrigatórios.");
+      setErro(t.required);
       return;
     }
-
     setStatus("sending");
-    setErrorMessage("");
-
+    setErro("");
     try {
-      // Envio direto via FormSubmit AJAX para joaogabrielmaia092@gmail.com
-      const response = await fetch("https://formsubmit.co/ajax/joaogabrielmaia092@gmail.com", {
+      // Envio direto via FormSubmit AJAX (site estático, sem backend próprio)
+      const resposta = await fetch(`https://formsubmit.co/ajax/${email}`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-        },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          name: formData.user_name,
-          email: formData.user_email,
-          company: formData.user_company || "Não informada",
-          message: formData.message,
-          _subject: "Novo contato pelo Portfólio",
+          name: dados.user_name,
+          email: dados.user_email,
+          company: dados.user_company || t.notInformed,
+          message: dados.message,
+          _subject: t.subject,
           _captcha: "false",
         }),
       });
-
-      const data = await response.json();
-
-      if (response.ok || data.success === "true" || data.success === true) {
+      const json = await resposta.json();
+      if (resposta.ok || json.success === "true" || json.success === true) {
         setStatus("success");
-        setFormData({
-          user_name: "",
-          user_email: "",
-          user_company: "",
-          message: "",
-        });
+        setDados({ user_name: "", user_email: "", user_company: "", message: "" });
       } else {
         setStatus("error");
-        setErrorMessage("Erro ao enviar mensagem via FormSubmit. Tente novamente.");
+        setErro(t.errorSend);
       }
     } catch (err) {
       console.error("FormSubmit fetch error:", err);
       setStatus("error");
-      setErrorMessage("Ocorreu um erro ao enviar a mensagem. Verifique sua conexão e tente novamente.");
+      setErro(t.errorNet);
     }
   };
 
+  const canais = [
+    { href: `mailto:${email}`, rotulo: t.directEmail, texto: email, Icon: Mail, externo: false },
+    { href: linkedin, rotulo: "LinkedIn", texto: "linkedin.com/in/joãogabrielmaia", Icon: LinkedinIcon, externo: true },
+    { href: github, rotulo: "GitHub", texto: "github.com/Joaogabrielmaia", Icon: GithubIcon, externo: true },
+  ];
+
   return (
-    <section id="contato" className="py-24 relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-[#F29A0F]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-
+    <section id="contato" aria-labelledby="contato-titulo" className="py-24 relative overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Contato"
-          title="Vamos conversar?"
-          description="Quer ver algum projeto em detalhes ou trocar uma ideia sobre automação, IA ou software? Escreva uma mensagem e eu respondo por aqui."
-          centered
-        />
+        <SectionHeader titleId="contato-titulo" badge={t.badge} script={t.script} title={t.title} description={t.description} />
 
-        <div className="slab grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8 max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 space-y-6"
-          >
-            <div className="glass-card p-8 rounded-3xl space-y-6">
-              <h3 className="text-xl font-bold text-[#0F0F10] tracking-tight">
-                Canais de Contato
-              </h3>
-              <p className="text-xs text-neutral-600 leading-relaxed font-normal">
-                Sinta-se à vontade para entrar em contato diretamente via e-mail ou redes profissionais.
-              </p>
+        <div className="slab grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+          <div className="lg:col-span-5">
+            <div className="glass-card p-8 space-y-6">
+              <h3 className="text-xl font-bold text-(color:--ink) tracking-tight">{t.channels}</h3>
+              <p className="text-xs text-neutral-600 leading-relaxed">{t.channelsDesc}</p>
+              <ul className="space-y-4 pt-2">
+                {canais.map(({ href, rotulo: r, texto, Icon, externo }) => (
+                  <li key={r}>
+                    <a
+                      href={href}
+                      target={externo ? "_blank" : undefined}
+                      rel={externo ? "noopener noreferrer" : undefined}
+                      className="group flex items-center gap-4 p-4 rounded-2xl bg-white/70 border border-[#7a8c57]/25 hover:border-[#F29A0F] hover:shadow-md transition-all"
+                    >
+                      <span className="p-3 rounded-xl bg-[#7a8c57]/20 text-(color:--gt2) shrink-0">
+                        <Icon className="w-5 h-5" />
+                      </span>
+                      <span className="overflow-hidden">
+                        <span className="text-xs font-mono text-neutral-500 block">{r}</span>
+                        <span className="text-sm font-bold text-(color:--ink) truncate block">{texto}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-              <div className="space-y-4 pt-2">
-                <a
-                  href="mailto:joaogabrielmaia092@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
-                >
-                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div className="overflow-hidden">
-                    <span className="text-xs font-mono text-neutral-400 block">E-mail Direto</span>
-                    <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black truncate block">
-                      joaogabrielmaia092@gmail.com
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/jo%C3%A3ogabrielmaia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
-                >
-                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
-                    <LinkedinIcon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-neutral-400 block">LinkedIn</span>
-                    <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black">
-                      linkedin.com/in/joãogabrielmaia
-                    </span>
-                  </div>
-                </a>
-
-                <a
-                  href="https://github.com/Joaogabrielmaia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
-                >
-                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
-                    <GithubIcon className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-mono text-neutral-400 block">GitHub</span>
-                    <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black">
-                      github.com/Joaogabrielmaia
-                    </span>
-                  </div>
-                </a>
+          <div className="lg:col-span-7">
+            <form onSubmit={enviar} noValidate className="glass-card p-8 space-y-5">
+              <div>
+                <label htmlFor="user_name" className={rotulo}>
+                  {t.name} <span aria-hidden className="text-[#F29A0F]">*</span>
+                </label>
+                <div className="relative">
+                  <User className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-500" aria-hidden />
+                  <input id="user_name" required autoComplete="name" value={dados.user_name} onChange={(e) => setDados({ ...dados, user_name: e.target.value })} placeholder={t.namePh} className={campo} />
+                </div>
               </div>
-            </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7"
-          >
-            <div className="glass-card p-8 sm:p-10 rounded-3xl border border-neutral-200/90 shadow-xl relative overflow-hidden">
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="user_name" className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2 font-mono">
-                    Nome Completo <span className="text-emerald-600">*</span>
+                  <label htmlFor="user_email" className={rotulo}>
+                    {t.email} <span aria-hidden className="text-[#F29A0F]">*</span>
                   </label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-neutral-400">
-                      <User className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="text"
-                      id="user_name"
-                      name="name"
-                      value={formData.user_name}
-                      onChange={(e) => setFormData({ ...formData, user_name: e.target.value })}
-                      placeholder="Seu nome"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-neutral-300/80 text-sm text-[#0F0F10] placeholder-neutral-400 focus:outline-none focus:border-[#0F0F10] focus:ring-1 focus:ring-[#0F0F10] transition-colors"
-                      required
-                    />
+                    <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-500" aria-hidden />
+                    <input id="user_email" type="email" required autoComplete="email" value={dados.user_email} onChange={(e) => setDados({ ...dados, user_email: e.target.value })} placeholder={t.emailPh} className={campo} />
                   </div>
                 </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="user_email" className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2 font-mono">
-                      E-mail <span className="text-emerald-600">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-neutral-400">
-                        <Mail className="w-4 h-4" />
-                      </div>
-                      <input
-                        type="email"
-                        id="user_email"
-                        name="email"
-                        value={formData.user_email}
-                        onChange={(e) => setFormData({ ...formData, user_email: e.target.value })}
-                        placeholder="seu.email@empresa.com"
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-neutral-300/80 text-sm text-[#0F0F10] placeholder-neutral-400 focus:outline-none focus:border-[#0F0F10] focus:ring-1 focus:ring-[#0F0F10] transition-colors"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="user_company" className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2 font-mono">
-                      Empresa
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-neutral-400">
-                        <Building2 className="w-4 h-4" />
-                      </div>
-                      <input
-                        type="text"
-                        id="user_company"
-                        name="company"
-                        value={formData.user_company}
-                        onChange={(e) => setFormData({ ...formData, user_company: e.target.value })}
-                        placeholder="Nome da sua empresa"
-                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-neutral-300/80 text-sm text-[#0F0F10] placeholder-neutral-400 focus:outline-none focus:border-[#0F0F10] focus:ring-1 focus:ring-[#0F0F10] transition-colors"
-                      />
-                    </div>
-                  </div>
-                </div>
-
                 <div>
-                  <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-2 font-mono">
-                    Mensagem <span className="text-emerald-600">*</span>
-                  </label>
+                  <label htmlFor="user_company" className={rotulo}>{t.company}</label>
                   <div className="relative">
-                    <div className="absolute top-3.5 left-3.5 pointer-events-none text-neutral-400">
-                      <MessageSquare className="w-4 h-4" />
-                    </div>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Sua mensagem..."
-                      className="w-full pl-10 pr-4 py-3 rounded-xl bg-white border border-neutral-300/80 text-sm text-[#0F0F10] placeholder-neutral-400 focus:outline-none focus:border-[#0F0F10] focus:ring-1 focus:ring-[#0F0F10] transition-colors resize-none"
-                      required
-                    />
+                    <Building2 className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-500" aria-hidden />
+                    <input id="user_company" autoComplete="organization" value={dados.user_company} onChange={(e) => setDados({ ...dados, user_company: e.target.value })} placeholder={t.companyPh} className={campo} />
                   </div>
                 </div>
+              </div>
 
+              <div>
+                <label htmlFor="message" className={rotulo}>
+                  {t.message} <span aria-hidden className="text-[#F29A0F]">*</span>
+                </label>
+                <div className="relative">
+                  <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-500" aria-hidden />
+                  <textarea id="message" required rows={4} value={dados.message} onChange={(e) => setDados({ ...dados, message: e.target.value })} placeholder={t.messagePh} className={`${campo} resize-none`} />
+                </div>
+              </div>
+
+              <div role="status" aria-live="polite">
                 {status === "error" && (
-                  <div className="p-3.5 rounded-xl bg-red-50 text-red-700 border border-red-200 text-xs font-medium flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
-                    <span>{errorMessage || "Ocorreu um erro ao enviar. Tente novamente."}</span>
+                  <div className="p-4 rounded-xl bg-red-500/10 text-red-700 dark:text-red-300 border border-red-500/30 text-xs font-semibold flex items-center gap-2">
+                    <AlertCircle className="w-5 h-5 shrink-0" aria-hidden />
+                    <span>{erro}</span>
                   </div>
                 )}
-
                 {status === "success" && (
-                  <div className="p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-                    <span>Mensagem enviada com sucesso! Entrarei em contato em breve.</span>
+                  <div className="p-4 rounded-xl bg-[#7a8c57]/15 text-(color:--gt2) border border-[#7a8c57]/40 text-xs font-semibold flex items-center gap-2">
+                    <CheckCircle2 className="w-5 h-5 shrink-0" aria-hidden />
+                    <span>{t.success}</span>
                   </div>
                 )}
+              </div>
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="w-full py-4 px-6 rounded-sm bg-[#F29A0F] text-[#161616] font-bold text-sm hover:bg-[#d98200] transition-all flex items-center justify-center gap-2 border-0 shadow-md group disabled:opacity-60 cursor-pointer"
-                >
-                  {status === "sending" ? (
-                    <>
-                      <span className="w-4 h-4 border-2 border-[#161616] border-t-transparent rounded-full animate-spin" />
-                      <span>Enviando mensagem...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Enviar mensagem</span>
-                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
-          </motion.div>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="group w-full py-4 px-6 rounded-sm bg-[#F29A0F] text-[#161616] font-bold text-sm hover:bg-[#d98200] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]/60"
+              >
+                {status === "sending" ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-[#161616] border-t-transparent rounded-full animate-spin" aria-hidden />
+                    <span>{t.sending}</span>
+                  </>
+                ) : (
+                  <>
+                    <span>{t.send}</span>
+                    <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" aria-hidden />
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

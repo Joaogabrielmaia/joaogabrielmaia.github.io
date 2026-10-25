@@ -26,7 +26,7 @@ export function BackLink({
           router.back();
         }
       }}
-      className="inline-flex items-center gap-2 text-sm font-semibold text-[#5b6b3e] hover:text-[#F29A0F] transition-colors"
+      className="inline-flex items-center gap-2 text-sm font-semibold text-(color:--gt) hover:text-[#F29A0F] transition-colors"
     >
       <ArrowLeft className="w-4 h-4" aria-hidden />
       {children}

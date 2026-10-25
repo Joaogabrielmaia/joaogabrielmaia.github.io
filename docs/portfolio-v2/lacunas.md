@@ -33,3 +33,8 @@ Tudo o que ficou de fora, foi cortado ou precisa de decisão do João. Nada diss
 22. **Desempenho:** ver `qualidade.md`. A nota do Lighthouse em modo móvel (simulado) ficou entre 58 e 66; há trabalho a fazer em JavaScript e fontes.
 23. **Console do navegador:** em exportação estática, o Next 16 tenta buscar arquivos `__next.*.txt` de pré-carregamento que o servidor estático não resolve; aparece como 404 no console (Lighthouse "best practices" 96). Não quebra a navegação.
 24. **Verificação em outros navegadores/aparelhos:** só Chrome (desktop e viewport de celular). Não testei Safari, Firefox nem celular físico.
+
+## Inglês e tema escuro (25/10/2026)
+25. **Inglês:** o site tem versão completa em `/en` (home, projetos, experiências, áreas e sobre), escolhida pelo botão "EN/PT" do cabeçalho. A tradução é minha (a partir do português) e **precisa de revisão do João**, principalmente os textos de decisões e de qualidade dos projetos. Os nomes de arquivos e de telas do GitHub continuam em português.
+26. **Legendas dos prints em inglês:** só as 5 legendas em destaque de cada projeto foram traduzidas; as demais derivam do nome do arquivo (em português). Datas das tabelas de números seguem no formato dd/mm/aaaa.
+27. **Tema escuro:** cinza quase preto (`#161718`) com cartões `#222426`, verde-oliva mais claro para texto e o mesmo laranja de ação. Escolha salva no navegador; sem escolha, segue o sistema. Medido com axe: 0 violações de contraste nos dois temas, nos dois idiomas.

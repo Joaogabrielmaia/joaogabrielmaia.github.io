@@ -1,16 +1,24 @@
 import type { MetadataRoute } from "next";
-import { projects, roles, experiences, profile } from "@/content";
+import { getContent } from "@/content";
+import { routes } from "@/content/routes";
+import type { Lang } from "@/content/lang";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const rotas = [
-    "/",
-    "/projetos",
-    "/sobre",
-    ...projects.map((p) => `/projetos/${p.slug}`),
-    ...roles.map((r) => `/areas/${r.slug}`),
-    ...experiences.map((e) => `/experiencia/${e.slug}`),
-  ];
-  return rotas.map((r) => ({ url: `${profile.site}${r === "/" ? "" : r}`, lastModified: new Date("2026-10-25") }));
+  const site = getContent("pt").profile.site;
+  const lista: string[] = [];
+  for (const lang of ["pt", "en"] as Lang[]) {
+    const c = getContent(lang);
+    const r = routes(lang);
+    lista.push(
+      r.home,
+      r.projects,
+      r.about,
+      ...c.projects.map((p) => r.project(p.slug)),
+      ...c.roles.map((x) => r.area(x.slug)),
+      ...c.experiences.map((e) => r.experiencePage(e.slug)),
+    );
+  }
+  return lista.map((u) => ({ url: `${site}${u === "/" ? "" : u}`, lastModified: new Date("2026-10-25") }));
 }

@@ -5,6 +5,7 @@ const rotas = [
   "/projetos/trilha", "/projetos/ponte", "/projetos/erp-vortex",
   "/areas/implantacao", "/areas/sdr-bdr",
   "/experiencia/hotmart-suporte-ti", "/experiencia/desenvolvedor-full-stack-autonomo",
+  "/en", "/en/projects", "/en/about", "/en/projects/trilha", "/en/areas/implantacao", "/en/experience/hotmart-suporte-ti",
 ];
 
 test.describe("fluxos principais", () => {
@@ -121,4 +122,47 @@ test("menu do celular abre e navega", async ({ page }) => {
   await page.getByRole("button", { name: "Abrir menu" }).click();
   await page.getByRole("dialog", { name: "Menu" }).getByRole("link", { name: "Projetos" }).click();
   await expect(page).toHaveURL(/\/projetos$/);
+});
+
+test.describe("idioma e tema", () => {
+  test("alternar idioma mantém a página (PT ↔ EN)", async ({ page }) => {
+    await page.goto("/projetos/trilha");
+    await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
+    await page.getByRole("link", { name: /Read this page in English/ }).click();
+    await expect(page).toHaveURL(/\/en\/projects\/trilha$/);
+    await expect(page.locator("html")).toHaveAttribute("lang", "en");
+    await expect(page.getByRole("heading", { level: 1, name: "Trilha" })).toBeVisible();
+    await expect(page.getByText("About this scenario")).toBeVisible();
+    await expect(page.getByText("A platform to track customer onboarding")).toBeVisible();
+    await page.getByRole("link", { name: /Ler esta página em português/ }).click();
+    await expect(page).toHaveURL(/\/projetos\/trilha$/);
+  });
+
+  test("home em inglês mostra os textos traduzidos", async ({ page }) => {
+    await page.goto("/en");
+    await expect(page.getByRole("link", { name: "View projects" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "What I have experience in" })).toBeVisible();
+    await expect(page.getByText("Where I study")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Let's talk" })).toBeVisible();
+  });
+
+  test("tema escuro: alterna, aplica as cores e lembra a escolha ao recarregar", async ({ page }) => {
+    await page.emulateMedia({ colorScheme: "light" });
+    await page.goto("/");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await page.getByRole("button", { name: "Mudar para o tema escuro" }).click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    const fundo = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+    expect(fundo).toBe("rgb(22, 23, 24)");
+    await page.reload();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await page.getByRole("button", { name: "Mudar para o tema claro" }).click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  });
+
+  test("sem escolha salva, segue a preferência do sistema", async ({ page }) => {
+    await page.emulateMedia({ colorScheme: "dark" });
+    await page.goto("/en");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  });
 });

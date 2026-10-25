@@ -4,11 +4,14 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Expandable } from "./ui/Expandable";
+import { ui } from "@/content/ui";
+import type { Lang } from "@/content/lang";
 import type { Project } from "@/content/schema";
 
 type Print = Project["prints"][number];
 
-export function Gallery({ slug, prints }: { slug: string; prints: Print[] }) {
+export function Gallery({ slug, prints, lang }: { slug: string; prints: Print[]; lang: Lang }) {
+  const t = ui[lang].project;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [atual, setAtual] = useState(0);
 
@@ -49,11 +52,12 @@ export function Gallery({ slug, prints }: { slug: string; prints: Print[] }) {
   );
 
   const p = prints[atual];
+  const botaoNav = "rounded-full border-2 border-[#7a8c57] p-2 text-(color:--gt) hover:bg-[#5b6b3e] hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]";
 
   return (
     <>
       {demais.length > 0 ? (
-        <Expandable extra={grade(demais)} labelMais={`Ver todos os ${prints.length} prints`} labelMenos="Mostrar só os destaques">
+        <Expandable extra={grade(demais)} labelMais={t.seeAllPrints(prints.length)} labelMenos={t.onlyHighlights}>
           {grade(destaques)}
         </Expandable>
       ) : (
@@ -62,8 +66,8 @@ export function Gallery({ slug, prints }: { slug: string; prints: Print[] }) {
 
       <dialog
         ref={dialogRef}
-        aria-label="Visualização do print"
-        className="m-auto max-h-[92vh] w-[min(1100px,94vw)] rounded-3xl border-0 bg-[#f4f4f1] p-0 backdrop:bg-black/70"
+        aria-label={t.viewer}
+        className="m-auto max-h-[92vh] w-[min(1100px,94vw)] rounded-3xl border-0 bg-(color:--card) p-0 text-(color:--ink) backdrop:bg-black/70"
         onClick={(e) => e.target === dialogRef.current && fechar()}
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") ir(1);
@@ -74,33 +78,21 @@ export function Gallery({ slug, prints }: { slug: string; prints: Print[] }) {
           <div className="flex max-h-[92vh] flex-col">
             <div className="flex items-center justify-between gap-3 px-5 py-3">
               <p className="text-sm text-neutral-700">
-                {atual + 1} de {prints.length}
+                {atual + 1} {t.of} {prints.length}
               </p>
-              <button
-                type="button"
-                onClick={fechar}
-                autoFocus
-                aria-label="Fechar"
-                className="rounded-full p-2 hover:bg-black/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]"
-              >
+              <button type="button" onClick={fechar} autoFocus aria-label={t.close} className="rounded-full p-2 hover:bg-black/10 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]">
                 <X className="h-5 w-5" aria-hidden />
               </button>
             </div>
             <div className="min-h-0 flex-1 overflow-auto px-5">
-              <Image
-                src={`/projects/${slug}/${p.arquivo}.webp`}
-                alt={p.legenda}
-                width={p.largura}
-                height={p.altura}
-                className="mx-auto h-auto w-full max-w-full rounded-xl"
-              />
+              <Image src={`/projects/${slug}/${p.arquivo}.webp`} alt={p.legenda} width={p.largura} height={p.altura} className="mx-auto h-auto w-full max-w-full rounded-xl" />
             </div>
             <div className="flex items-center justify-between gap-4 px-5 py-4">
-              <button type="button" onClick={() => ir(-1)} aria-label="Print anterior" className="rounded-full border-2 border-[#7a8c57] p-2 text-[#5b6b3e] hover:bg-[#5b6b3e] hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]">
+              <button type="button" onClick={() => ir(-1)} aria-label={t.prevPrint} className={botaoNav}>
                 <ChevronLeft className="h-5 w-5" aria-hidden />
               </button>
               <p className="flex-1 text-center text-sm leading-snug text-neutral-800">{p.legenda}</p>
-              <button type="button" onClick={() => ir(1)} aria-label="Próximo print" className="rounded-full border-2 border-[#7a8c57] p-2 text-[#5b6b3e] hover:bg-[#5b6b3e] hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#F29A0F]">
+              <button type="button" onClick={() => ir(1)} aria-label={t.nextPrint} className={botaoNav}>
                 <ChevronRight className="h-5 w-5" aria-hidden />
               </button>
             </div>

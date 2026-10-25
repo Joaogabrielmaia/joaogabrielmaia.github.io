@@ -3,8 +3,9 @@
 Site estático (Next.js 16, React 19, Tailwind 4) publicado no GitHub Pages em https://joaogabrielmaia.github.io. A publicação é automática a cada push na `main` (`.github/workflows/deploy.yml`).
 
 ## Estrutura
+- Português nas URLs originais e inglês em `/en` (`/en/projects`, `/en/experience`, `/en/areas`, `/en/about`); tema claro e escuro
 - `/` home com resumos · `/projetos` e `/projetos/[slug]` · `/experiencia/[slug]` · `/areas/[slug]` · `/sobre`
-- `content/`: **todo o conteúdo**, tipado e validado com Zod no build (o build falha se faltar um campo obrigatório)
+- `content/`: **todo o conteúdo** em português; as traduções ficam em `content/en/` (só os campos de texto, mescladas por `deepMerge`) e os textos de interface em `content/ui.ts`, tipado e validado com Zod no build (o build falha se faltar um campo obrigatório)
   - `profile.ts`, `roles.ts` (8 áreas), `experiences/`, `skills.ts` (competências e certificações), `projects/` (um arquivo por projeto)
 - `components/`, `app/`: interface e rotas
 - `public/projects/<slug>/`: prints em WebP (e `thumbs/`), `diagrams/` em SVG
