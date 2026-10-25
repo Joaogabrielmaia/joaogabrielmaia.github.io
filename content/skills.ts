@@ -12,15 +12,17 @@ export const skills: SkillGroup[] = z.array(SkillGroupSchema).parse([
   { grupo: "Idiomas", destaque: false, itens: ["Português nativo", "Inglês básico"] },
 ]);
 
-// Credenciais: sem `urlCredencial`/`verificado` enquanto o link não for conferido (ver docs/portfolio-v2/lacunas.md).
+// `urlCredencial` vem dos códigos enviados pelo João (LinkedIn, 25/10/2026). `verificado: true` só onde a página pública foi
+// conferida (nome e curso corretos): Alura e Credly. Udemy (bloqueia robôs, 403) e Coursera (200 genérico) ficam sem o selo.
+// Career Essentials in Generative AI (Microsoft/LinkedIn): sem URL, o LinkedIn só mostra o código.
 export const certifications: Certification[] = z.array(CertificationSchema).parse([
-  { titulo: "Gestão de Projetos e Gestão Ágil com Scrum", emissor: "Udemy", data: "jul/2026", destaque: true },
+  { titulo: "Gestão de Projetos e Gestão Ágil com Scrum", emissor: "Udemy", data: "jul/2026", destaque: true, urlCredencial: "https://www.udemy.com/certificate/UC-3f824937-d8e3-474d-9673-0b2a44650688/" },
   { titulo: "Career Essentials in Generative AI", emissor: "Microsoft e LinkedIn", data: "jul/2026", destaque: true },
-  { titulo: "Google AI Essentials", emissor: "Google (Coursera)", data: "jul/2026", destaque: true },
-  { titulo: "Banco de Dados SQL do Básico ao Avançado", emissor: "Udemy", data: "jul/2026", destaque: true },
-  { titulo: "Power BI Completo", emissor: "Udemy", data: "jul/2026", destaque: false },
-  { titulo: "Getting Started with Generative AI", emissor: "IBM SkillsBuild (Credly)", data: "jul/2026", destaque: false },
-  { titulo: "Curso Web Moderno Completo com JavaScript", emissor: "Udemy", data: "set/2025", destaque: false },
-  { titulo: "Git e GitHub: compartilhando e colaborando em projetos", emissor: "Alura", data: "abr/2025", destaque: false },
-  { titulo: "Git e GitHub: repositório, commit e versões", emissor: "Alura", data: "set/2023", destaque: false },
+  { titulo: "Google AI Essentials", emissor: "Google (Coursera)", data: "jul/2026", destaque: true, urlCredencial: "https://www.coursera.org/account/accomplishments/verify/KYYB1071VUYT" },
+  { titulo: "Banco de Dados SQL do Básico ao Avançado", emissor: "Udemy", data: "jul/2026", destaque: true, urlCredencial: "https://www.udemy.com/certificate/UC-8e3e5ec0-4f34-4de1-9d5d-42abf8018289/" },
+  { titulo: "Power BI Completo", emissor: "Udemy", data: "jul/2026", destaque: false, urlCredencial: "https://www.udemy.com/certificate/UC-fdd87f9d-16c2-4e1b-807d-e8eb12d7500d/" },
+  { titulo: "Getting Started with Generative AI", emissor: "IBM SkillsBuild (Credly)", data: "jul/2026", destaque: false, urlCredencial: "https://www.credly.com/badges/f49c52e3-4f58-4c8a-8e11-cf80af175739/public_url", verificado: true },
+  { titulo: "Curso Web Moderno Completo com JavaScript", emissor: "Udemy", data: "set/2025", destaque: false, urlCredencial: "https://www.udemy.com/certificate/UC-39b7e3e4-3f58-489e-955a-9ac5601972bb/" },
+  { titulo: "Git e GitHub: compartilhando e colaborando em projetos", emissor: "Alura", data: "abr/2025", destaque: false, urlCredencial: "https://cursos.alura.com.br/certificate/a01fc020-2b0d-4412-93e8-a002aa1e285d", verificado: true },
+  { titulo: "Git e GitHub: repositório, commit e versões", emissor: "Alura", data: "set/2023", destaque: false, urlCredencial: "https://cursos.alura.com.br/certificate/4f786b27-ab13-40b2-91d7-7cca98d12ac6", verificado: true },
 ]);

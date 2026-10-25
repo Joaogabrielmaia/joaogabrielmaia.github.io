@@ -9,15 +9,20 @@ function Cartao({ c }: { c: Certification }) {
       <p className="font-mono text-xs text-neutral-600">{c.data}</p>
       <h3 className="font-display text-lg font-extrabold leading-snug text-[#161616]">{c.titulo}</h3>
       <p className="text-sm text-neutral-700">{c.emissor}</p>
-      {c.urlCredencial && c.verificado && (
-        <a
-          href={c.urlCredencial}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-auto text-sm font-bold text-[#5b6b3e] underline underline-offset-2 hover:text-[#F29A0F]"
-        >
-          Ver credencial
-        </a>
+      {c.urlCredencial && (
+        <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 pt-1">
+          <a
+            href={c.urlCredencial}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-bold text-[#5b6b3e] underline underline-offset-2 hover:text-[#161616]"
+          >
+            Ver credencial<span className="sr-only"> de {c.titulo} (abre em nova aba)</span>
+          </a>
+          {c.verificado && (
+            <span className="rounded-full bg-[#7a8c57]/20 px-2 py-0.5 text-[11px] font-bold text-[#3f4a2b]">Verificada</span>
+          )}
+        </div>
       )}
     </li>
   );

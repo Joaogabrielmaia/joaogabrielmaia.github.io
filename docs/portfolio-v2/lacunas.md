@@ -12,13 +12,13 @@ Tudo o que ficou de fora, foi cortado ou precisa de decisão do João. Nada diss
 7. **Recomendação no LinkedIn** do cliente do e-commerce (pendência da base).
 
 ## Links e credenciais
-8. **GerêncieJá e PM Copilot sem link.** Em 25/10/2026, `github.com/Joaogabrielmaia/GerencieJa`, `github.com/Joaogabrielmaia/PMCopilot` e `gerencieja.onrender.com` retornam 404 (a lista pública de repositórios do GitHub não os mostra: podem ser privados, ter sido renomeados ou apagados). Removi os links; as páginas dos dois ficaram só com o texto. Passar o endereço correto, se existir.
-9. **Certificações sem link e sem selo "Verificado".** Os 9 itens estão no site, mas nenhum tem URL de credencial confirmada. O link da Microsoft/LinkedIn é genérico (a base já avisa). Quando o João enviar os links, basta preencher `urlCredencial` e `verificado: true` em `content/skills.ts`; o teste exige a URL junto do selo.
+8. **GerêncieJá, PM Copilot e demo sem link (confirmado pelo João em 25/10/2026):** não existem mais links públicos; as páginas ficam só com texto.
+9. **Certificações:** 8 de 9 têm link de credencial, montado a partir dos códigos do LinkedIn. **Verificadas** (página pública conferida com nome e curso): 2 da Alura e IBM/Credly. **Sem o selo:** 4 da Udemy (bloqueiam robôs, 403) e Google/Coursera (a página responde 200 para qualquer código): abrir uma vez e conferir. **Sem link:** Microsoft/LinkedIn (o LinkedIn só mostra o código). Para dar o selo, marcar `verificado: true` em `content/skills.ts`.
 10. **LinkedIn:** o link responde 999 a robôs (bloqueio do LinkedIn), então o verificador só avisa. Conferir à mão.
 11. **Power BI** (Dashboard Executivo): sem link público, como na base.
 
 ## Conteúdo
-12. **`cv.pdf` não foi alterado** (o prompt pede que o currículo seja atualizado à parte): continua sem a conclusão em dez/2027, o Power BI, os 7 projetos e os casos reais.
+12. **`cv.pdf`:** decisão do João em 25/10/2026: não atualizar agora. Continua desatualizado; o botão "Baixar CV" aponta para ele.
 13. **ERP Vortex:** só texto, sem imagens, sem afirmar uso (regras da base).
 14. **Formulário de contato:** usa FormSubmit (AJAX). **Não testei o envio** (enviaria e-mail de verdade); na primeira vez o FormSubmit pede ativação do endereço por e-mail. Confirmar que funciona.
 15. **Textos de exemplo nos READMEs:** a base avisava de "Minha experiência real" (Mapa) e de `[ESPAÇO PARA EU PREENCHER: ...]` em vários READMEs. Em 25/10/2026, a busca por esses marcadores nos 7 READMEs clonados não encontrou nenhum. Parece resolvido; vale uma olhada.
