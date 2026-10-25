@@ -11,8 +11,8 @@ export function RolesSection() {
         <SectionHeader
           titleId="areas-titulo"
           badge="Áreas"
-          title="Onde posso ajudar"
-          description="Oito funções em que meu trabalho se encaixa. Cada uma tem uma página com as provas que tenho para ela."
+          title="Áreas em que tenho experiência"
+          description="Oito áreas em que já atuei ou construí algo. Cada uma tem uma página com projetos e experiências ligados a ela."
         />
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {roles.map((r) => {
@@ -30,14 +30,14 @@ export function RolesSection() {
                   </h3>
                   <p className="text-sm leading-relaxed text-neutral-700">{r.pitch}</p>
                   {principais.length > 0 && (
-                    <div className="flex flex-wrap gap-1.5" aria-label="Projetos principais">
+                    <div className="flex flex-wrap gap-1.5" aria-label="Projetos">
                       {principais.map((p) => (
                         <Chip key={p.projeto.slug} variant="destaque">{p.projeto.titulo}</Chip>
                       ))}
                     </div>
                   )}
                   <span aria-hidden className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-bold text-[#161616]">
-                    Ver como me encaixo
+                    Ver detalhes
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </article>

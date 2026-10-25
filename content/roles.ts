@@ -22,7 +22,7 @@ const raw = [
     slug: "consultor-automacao-ia",
     nome: "Consultor de Automação IA",
     nomeCurto: "Automação IA",
-    pitch: "Identifico o que vale automatizar, construo, meço e explico os limites.",
+    pitch: "Mapeio o que vale automatizar, construo, meço e documento os limites.",
     oQueFaz:
       "Descobre qual processo do cliente pode ser automatizado (com ou sem IA), constrói a solução, mede o resultado e explica com honestidade o que ela não faz.",
     oQueValoriza: "Identificar o processo automatizável, construir, medir e explicar os limites.",
@@ -52,7 +52,7 @@ const raw = [
     slug: "customer-success",
     nome: "Customer Success",
     nomeCurto: "Customer Success",
-    pitch: "Resolvo o problema, acompanho a adoção e antecipo o risco.",
+    pitch: "Atendo o problema, acompanho o uso e sinalizo risco cedo.",
     oQueFaz:
       "Acompanha o cliente depois da venda: garante que ele use o produto, resolve o que trava, antecipa sinais de risco e ajuda na renovação.",
     oQueValoriza: "Relacionamento, adoção, resolver problema e antecipar risco.",

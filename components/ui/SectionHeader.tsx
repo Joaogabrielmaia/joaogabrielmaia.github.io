@@ -17,7 +17,7 @@ const scriptWords: Record<string, string> = {
   Experiência: "path",
   Certificações: "proof",
   Contato: "hello",
-  "Áreas": "fit",
+  "Áreas": "áreas",
   Perfil: "me",
 };
 

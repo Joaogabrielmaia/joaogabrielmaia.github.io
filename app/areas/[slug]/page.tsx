@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const r = roleBySlug(slug);
   if (!r) return {};
   return {
-    title: `${r.nome}: como me encaixo`,
+    title: `${r.nome}: experiência e projetos`,
     description: `${r.pitch} Evidências reais de experiência e projetos documentados para a função de ${r.nome}.`,
     alternates: { canonical: `/areas/${r.slug}` },
   };
@@ -47,7 +47,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       <Breadcrumb itens={[{ rotulo: "Início", href: "/" }, { rotulo: "Áreas", href: "/#areas" }, { rotulo: r.nomeCurto }]} voltarPara="/#areas" />
 
       <header className="border-y border-black/20 py-8">
-        <p className="font-script text-4xl text-[#F29A0F]">como me encaixo</p>
+        <p className="font-script text-4xl text-[#F29A0F]">área de atuação</p>
         <h1 className="font-condensed uppercase font-normal text-5xl sm:text-7xl leading-[0.95] text-[#7a8c57]">{r.nome}</h1>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral-800">{r.oQueFaz}</p>
         <div className="mt-6 flex flex-wrap gap-3">
@@ -60,9 +60,9 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         </div>
       </header>
 
-      <section aria-labelledby="encaixe" className="py-10">
-        <h2 id="encaixe" className="font-condensed uppercase font-normal text-4xl sm:text-5xl text-[#7a8c57] mb-2">Por que me encaixo</h2>
-        <p className="mb-6 text-sm text-neutral-700">O que esta função valoriza: {r.oQueValoriza}</p>
+      <section aria-labelledby="experiencia-na-area" className="py-10">
+        <h2 id="experiencia-na-area" className="font-condensed uppercase font-normal text-4xl sm:text-5xl text-[#7a8c57] mb-2">Experiência nesta área</h2>
+        <p className="mb-6 text-sm text-neutral-700">O que esta área envolve: {r.oQueValoriza}</p>
         <ul className="space-y-4">
           {r.evidencias.map((ev) => (
             <li key={ev.texto} className="glass-card flex flex-col gap-2 p-5 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
@@ -84,7 +84,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 <h3 className="font-condensed uppercase text-3xl leading-none text-[#5b6b3e]">
                   <Link href={`/projetos/${projeto.slug}`} className="hover:text-[#F29A0F]">{projeto.titulo}</Link>
                 </h3>
-                <Chip variant={nivel === "principal" ? "area" : "area-rel"}>{nivel === "principal" ? "Principal" : "Relacionado"}</Chip>
+                <Chip variant={nivel === "principal" ? "area" : "area-rel"}>{nivel === "principal" ? "Mais ligado" : "Também ligado"}</Chip>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-neutral-800">{evidencia}</p>
               <Link href={`/projetos/${projeto.slug}`} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-[#161616] hover:text-[#F29A0F]">
@@ -97,7 +97,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
       {es.length > 0 && (
         <section aria-labelledby="experiencias-da-area" className="py-6">
-          <h2 id="experiencias-da-area" className="font-condensed uppercase font-normal text-4xl sm:text-5xl text-[#7a8c57] mb-6">Experiências relevantes</h2>
+          <h2 id="experiencias-da-area" className="font-condensed uppercase font-normal text-4xl sm:text-5xl text-[#7a8c57] mb-6">Experiências ligadas a esta área</h2>
           <ul className="grid gap-4 sm:grid-cols-2">
             {es.map((e) => (
               <li key={e.slug} className="glass-card p-5">

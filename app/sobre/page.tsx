@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "Quem sou, o que busco (funções, tipo de empresa e formato de trabalho), formação, idiomas e como trabalho com clientes.",
+  description: "Quem sou, áreas de atuação, formato de trabalho, formação, idiomas e como trabalho com clientes.",
   alternates: { canonical: "/sobre" },
 };
 
@@ -35,10 +35,10 @@ export default function SobrePage() {
         </div>
       </Bloco>
 
-      <Bloco titulo="O que busco">
+      <Bloco titulo="Áreas e formato de trabalho">
         <dl className="glass-card space-y-4 p-6 text-sm">
-          <div><dt className="font-display font-bold text-[#5b6b3e]">Funções</dt><dd className="mt-1 text-neutral-800">{profile.busca.funcoes} <Link href="/#areas" className="font-bold underline underline-offset-2 hover:text-[#F29A0F]">Ver as áreas</Link>.</dd></div>
-          <div><dt className="font-display font-bold text-[#5b6b3e]">Tipo de empresa</dt><dd className="mt-1 text-neutral-800">{profile.busca.empresas}</dd></div>
+          <div><dt className="font-display font-bold text-[#5b6b3e]">Áreas em que atuei</dt><dd className="mt-1 text-neutral-800">{profile.busca.funcoes} <Link href="/#areas" className="font-bold underline underline-offset-2 hover:text-[#F29A0F]">Ver as áreas</Link>.</dd></div>
+          <div><dt className="font-display font-bold text-[#5b6b3e]">Contexto</dt><dd className="mt-1 text-neutral-800">{profile.busca.empresas}</dd></div>
           <div><dt className="font-display font-bold text-[#5b6b3e]">Formato</dt><dd className="mt-1 text-neutral-800">{profile.busca.formato}</dd></div>
         </dl>
       </Bloco>

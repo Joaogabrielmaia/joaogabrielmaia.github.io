@@ -10,10 +10,10 @@ export const profile = ProfileSchema.parse({
   site: "https://joaogabrielmaia.github.io",
   hero: {
     titulo: "João Gabriel Maia",
-    subtitulo: "Engenharia de Software · implantação, automação e relacionamento com clientes",
+    subtitulo: "Engenharia de Software · desenvolvimento, automação e atendimento a clientes",
     frase:
-      "Desenvolvo sistemas e conduzo a conversa com o cliente: do discovery à entrega e à evolução.",
-    disponivel: "Disponível para oportunidades",
+      "Desenvolvo sistemas e acompanho o cliente do discovery à entrega e à evolução.",
+    disponivel: "Betim, MG · remoto ou híbrido",
   },
   provas: [
     { valor: "7", rotulo: "projetos documentados de ponta a ponta" },
@@ -23,10 +23,10 @@ export const profile = ProfileSchema.parse({
   ],
   busca: {
     funcoes:
-      "Implantação, automação (com ou sem IA), customer success, pré-vendas/SDR em SaaS B2B e consultoria de soluções.",
+      "Já atuei ou construí projetos em: implantação, automação (com ou sem IA), atendimento e sucesso do cliente, prospecção e consultoria de soluções.",
     empresas:
-      "Empresas pequenas (software houses, SaaS, consultorias de automação), onde o contato com fundadores e clientes é próximo.",
-    formato: "Remoto ou híbrido (BH/Betim), PJ ou CLT.",
+      "Equipe pequena, com contato direto com clientes.",
+    formato: "Localização: Betim, MG. Remoto ou híbrido (BH/Betim).",
   },
   formacao: {
     curso: "Bacharelado em Engenharia de Software",
@@ -35,8 +35,8 @@ export const profile = ProfileSchema.parse({
   },
   idiomas: ["Português nativo", "Inglês básico"],
   sobre: [
-    "Estudo Engenharia de Software na PUC Minas e, desde abril de 2026, trabalho como desenvolvedor full stack autônomo, junto de uma equipe pequena que assume projetos de clientes. Minha função principal é entender o que o cliente quer, traduzir para a equipe e acompanhar a entrega. Também desenvolvo.",
-    "Antes disso, fui aprendiz de suporte de TI na Hotmart, onde cuidei de chamados, rollouts de máquinas e de telefonia, salas de reunião e automações simples. Procuro meu primeiro emprego formal em uma função que una tecnologia, clientes e negócio.",
+    "Estudo Engenharia de Software na PUC Minas e, desde abril de 2026, trabalho como desenvolvedor full stack autônomo, junto de uma equipe pequena que assume projetos de clientes. Atuo entre o cliente e a equipe: levanto o que o cliente precisa, traduzo para o time e acompanho a entrega. Também desenvolvo.",
+    "Antes disso, fui aprendiz de suporte de TI na Hotmart, onde cuidei de chamados, rollouts de máquinas e de telefonia, salas de reunião e automações simples.",
   ],
   comoTrabalho: [
     "Começo pelo discovery: entrevisto quem usa o processo, separo o que é regra do que é hábito e escrevo o que combinamos.",
