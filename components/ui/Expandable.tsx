@@ -32,7 +32,7 @@ export function Expandable({
         aria-expanded={aberto}
         aria-controls={id}
         onClick={() => setAberto((v) => !v)}
-        className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-[#7a8c57] px-5 py-2 text-sm font-bold text-[#5b6b3e] hover:bg-[#5b6b3e] hover:text-[#fbfcf3] transition-colors"
+        className="mt-6 inline-flex items-center gap-2 rounded-full border-2 border-[#5b6b3e] bg-[#fbfcf3] px-5 py-2 text-sm font-bold text-[#3f4a2b] shadow-sm hover:bg-[#5b6b3e] hover:text-[#fbfcf3] transition-colors"
       >
         {aberto ? labelMenos : labelMais}
         <ChevronDown className={`w-4 h-4 transition-transform ${aberto ? "rotate-180" : ""}`} aria-hidden />

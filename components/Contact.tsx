@@ -103,7 +103,7 @@ export function Contact() {
                   href="mailto:joaogabrielmaia092@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
@@ -120,7 +120,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
@@ -137,7 +137,7 @@ export function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <GithubIcon className="w-4 h-4" />
                   </div>
                   <div>
@@ -262,17 +262,17 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full py-4 px-6 rounded-xl bg-[#0F0F10] text-[#FAFAFA] font-bold text-sm hover:bg-black transition-all flex items-center justify-center gap-2 border border-neutral-800 shadow-md group disabled:opacity-60 cursor-pointer"
+                  className="w-full py-4 px-6 rounded-sm bg-[#F29A0F] text-[#161616] font-bold text-sm hover:bg-[#d98200] transition-all flex items-center justify-center gap-2 border-0 shadow-md group disabled:opacity-60 cursor-pointer"
                 >
                   {status === "sending" ? (
                     <>
-                      <span className="w-4 h-4 border-2 border-[#F29A0F] border-t-transparent rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-[#161616] border-t-transparent rounded-full animate-spin" />
                       <span>Enviando mensagem...</span>
                     </>
                   ) : (
                     <>
                       <span>Enviar mensagem</span>
-                      <Send className="w-4 h-4 text-[#F29A0F] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </>
                   )}
                 </button>
