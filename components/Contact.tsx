@@ -72,7 +72,7 @@ export function Contact() {
 
   return (
     <section id="contato" className="py-24 relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-[#B8FF2C]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-[#F29A0F]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -82,7 +82,7 @@ export function Contact() {
           centered
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8 max-w-6xl mx-auto">
+        <div className="slab grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -101,9 +101,9 @@ export function Contact() {
               <div className="space-y-4 pt-2">
                 <a
                   href="mailto:Joaogabrielmaia092@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
@@ -118,9 +118,9 @@ export function Contact() {
                   href="https://www.linkedin.com/in/joãogabrielmaia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
                     <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
@@ -135,9 +135,9 @@ export function Contact() {
                   href="https://github.com/Joaogabrielmaia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
                     <GithubIcon className="w-4 h-4" />
                   </div>
                   <div>
@@ -266,13 +266,13 @@ export function Contact() {
                 >
                   {status === "sending" ? (
                     <>
-                      <span className="w-4 h-4 border-2 border-[#B8FF2C] border-t-transparent rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-[#F29A0F] border-t-transparent rounded-full animate-spin" />
                       <span>Enviando mensagem...</span>
                     </>
                   ) : (
                     <>
                       <span>Enviar mensagem</span>
-                      <Send className="w-4 h-4 text-[#B8FF2C] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                      <Send className="w-4 h-4 text-[#F29A0F] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </>
                   )}
                 </button>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeader } from "./ui/SectionHeader";
-import { Calendar, Building2, Laptop, GraduationCap } from "lucide-react";
+import { Building2, Laptop, GraduationCap } from "lucide-react";
 
 const experiences = [
   {
@@ -50,74 +50,51 @@ export function Experience() {
           description="Histórico de atuação técnica e acadêmica."
         />
 
-        <div className="relative max-w-4xl mx-auto mt-12">
-          {/* Vertical Timeline Line */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-200 -translate-x-1/2 hidden sm:block" />
-          <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-neutral-200 sm:hidden" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mt-4">
+          {experiences.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.article
+                key={item.role}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group relative border-t-2 border-[#7a8c57] pt-6"
+              >
+                <div className="flex items-center justify-between mb-5">
+                  <span className="font-condensed text-6xl leading-none text-[#F29A0F]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border-2 border-[#7a8c57] px-3 py-1 text-[11px] font-bold text-[#5b6b3e]">
+                    <Icon className="w-3.5 h-3.5" />
+                    {item.badge}
+                  </span>
+                </div>
 
-          <div className="space-y-12">
-            {experiences.map((item, index) => {
-              const Icon = item.icon;
-              const isEven = index % 2 === 0;
+                <h3 className="text-xl font-bold leading-tight text-[#5b6b3e] mb-1">
+                  {item.role}
+                </h3>
+                <p className="text-sm font-semibold text-neutral-700">{item.company}</p>
+                <p className="text-sm text-neutral-500 mb-4">{item.period}</p>
 
-              return (
-                <motion.div
-                  key={item.role}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="relative flex flex-col sm:flex-row items-start sm:items-center group"
-                >
-                  {/* Timeline Center Node */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#0F0F10] text-[#FAFAFA] border-4 border-[#FAFAFA] shadow-md flex items-center justify-center z-10 group-hover:bg-[#B8FF2C] group-hover:text-[#0F0F10] transition-colors">
-                    <span className="w-2 h-2 rounded-full bg-current" />
-                  </div>
+                <p className="text-sm italic text-[#5b6b3e]/90 leading-relaxed mb-5">
+                  {item.description}
+                </p>
 
-                  {/* Content Container */}
-                  <div className={`w-full sm:w-[calc(50%-2rem)] pl-12 sm:pl-0 ${isEven ? "sm:mr-auto sm:pr-4" : "sm:ml-auto sm:pl-4"}`}>
-                    <div className="glass-card p-6 sm:p-8 rounded-3xl relative">
-                      
-                      {/* Year Badge & Period */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#0F0F10] text-[#FAFAFA]">
-                          <Calendar className="w-3.5 h-3.5 text-[#B8FF2C]" />
-                          <span>{item.period}</span>
-                        </div>
-                        <span className="text-xs font-mono px-2.5 py-0.5 rounded-md bg-neutral-100 text-neutral-600 font-semibold">
-                          {item.badge}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl font-bold text-[#0F0F10] mb-1">
-                        {item.role}
-                      </h3>
-                      <div className="flex items-center gap-1.5 text-xs font-semibold text-neutral-500 mb-4 font-mono">
-                        <Icon className="w-4 h-4 text-neutral-700" />
-                        <span>{item.company}</span>
-                      </div>
-
-                      <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
-                        {item.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-1.5">
-                        {item.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-neutral-100 text-neutral-700 border border-neutral-200/60"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                </motion.div>
-              );
-            })}
-          </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full text-[11px] font-mono bg-white/70 text-neutral-700 border border-white"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

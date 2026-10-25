@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Syne, Pinyon_Script, Anton } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,27 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const syne = Syne({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["500", "700", "800"],
+  display: "swap",
+});
+
+const anton = Anton({
+  variable: "--font-condensed",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const pinyon = Pinyon_Script({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -61,9 +82,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased selection:bg-[#B8FF2C] selection:text-[#0F0F10]`}
+      className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${pinyon.variable} ${anton.variable} h-full antialiased selection:bg-[#F29A0F] selection:text-[#161616]`}
     >
-      <body className="min-h-full bg-[#FAFAFA] text-[#0F0F10] bg-grid-pattern relative overflow-x-hidden font-sans">
+      <body className="min-h-full text-[#161616] relative overflow-x-hidden font-sans">
         {children}
       </body>
     </html>

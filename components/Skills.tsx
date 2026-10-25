@@ -37,7 +37,7 @@ const skillCategories = [
   {
     category: "IA & Automação",
     icon: Bot,
-    accent: "border-[#B8FF2C]/50",
+    accent: "border-[#F29A0F]/50",
     skills: [
       "Groq API",
       "OpenAI API",
@@ -90,7 +90,7 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="competencias" className="py-24 relative overflow-hidden bg-neutral-900/5">
+    <section id="competencias" className="py-24 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Competências"
@@ -98,7 +98,7 @@ export function Skills() {
           description="Linguagens, frameworks, bancos de dados, ferramentas de inteligência artificial, automação e práticas ágeis aplicadas ao desenvolvimento de software."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="slab slab-green flex flex-col gap-4">
           {skillCategories.map((cat, idx) => {
             const Icon = cat.icon;
             return (
@@ -107,32 +107,32 @@ export function Skills() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className={`glass-card p-6 sm:p-8 rounded-3xl relative overflow-hidden group ${cat.accent}`}
+                transition={{ duration: 0.5, delay: idx * 0.06 }}
+                className="grid grid-cols-1 md:grid-cols-[18rem_1fr] gap-4"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-3 rounded-2xl bg-[#0F0F10] text-[#FAFAFA] shadow-sm">
+                <div className="glass-card flex items-center gap-3 px-6 py-5 rounded-[1.75rem]">
+                  <div className="p-2.5 rounded-xl bg-[#7a8c57] text-[#fbfcf3] shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#0F0F10]">
+                    <h3 className="font-condensed uppercase font-normal text-2xl leading-none text-[#5b6b3e]">
                       {cat.category}
                     </h3>
-                    <span className="text-xs text-neutral-500 font-mono">
-                      {cat.skills.length} Habilidades
+                    <span className="text-[11px] text-neutral-500 font-mono">
+                      {cat.skills.length} habilidades
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="glass-card flex flex-wrap items-center gap-2 px-6 py-5 rounded-[1.75rem]">
                   {cat.skills.map((skill) => (
-                    <div
+                    <span
                       key={skill}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/90 text-neutral-800 text-xs font-semibold border border-neutral-200/90 shadow-2xs hover:border-[#B8FF2C] hover:bg-[#0F0F10] hover:text-[#FAFAFA] transition-all duration-200 cursor-default group/skill"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-neutral-800 text-xs font-semibold border border-neutral-200 hover:border-[#F29A0F] hover:bg-[#F29A0F]/10 transition-colors cursor-default"
                     >
-                      <Check className="w-3 h-3 text-[#B8FF2C] group-hover/skill:scale-110 transition-transform" />
-                      <span>{skill}</span>
-                    </div>
+                      <Check className="w-3 h-3 text-[#7a8c57]" />
+                      {skill}
+                    </span>
                   ))}
                 </div>
               </motion.div>

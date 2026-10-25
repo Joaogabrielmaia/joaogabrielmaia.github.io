@@ -107,18 +107,18 @@ export function Projects() {
           className="glass-card rounded-3xl overflow-hidden mb-12 border border-neutral-200/90 shadow-xl group relative"
         >
           {/* Subtle Ambient Glow */}
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#B8FF2C]/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-[#F29A0F]/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             {/* Left Info Column */}
             <div className="lg:col-span-6 p-8 sm:p-10 flex flex-col justify-between relative z-10">
               <div>
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0F0F10] text-[#FAFAFA] mb-6 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#B8FF2C] animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#F29A0F] animate-pulse" />
                   <span>Projeto Principal</span>
                 </div>
 
-                <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0F0F10] tracking-tight mb-2">
+                <h3 className="font-condensed uppercase font-normal text-5xl sm:text-6xl text-[#7a8c57] tracking-tight mb-2">
                   {heroProject.title}
                 </h3>
                 <p className="text-sm font-semibold text-neutral-500 mb-4 font-mono">
@@ -152,7 +152,7 @@ export function Projects() {
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0F0F10] text-[#FAFAFA] text-xs font-semibold hover:bg-black transition-all shadow-md group/btn"
                   >
                     <span>Acessar Demo</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#B8FF2C] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#F29A0F] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </a>
                 )}
 
@@ -191,7 +191,7 @@ export function Projects() {
         </motion.div>
 
         {/* 2 OTHER PROJECTS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="slab grid grid-cols-1 md:grid-cols-2 gap-6">
           {gridProjects.map((project, index) => (
             <motion.div
               key={project.id}

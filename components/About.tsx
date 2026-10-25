@@ -36,7 +36,7 @@ export function About() {
           title="Engenharia de Software e Desenvolvimento Full Stack"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="slab grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Main Biography Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +45,7 @@ export function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 glass-card p-8 sm:p-10 rounded-3xl relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#B8FF2C]/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-48 h-48 bg-[#F29A0F]/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10 space-y-6">
               <p className="text-base sm:text-lg font-normal text-[#0F0F10] leading-relaxed">
@@ -55,11 +55,11 @@ export function About() {
 
               {/* Visão Técnica & Engenharia Full Stack */}
               <div className="p-5 rounded-2xl bg-[#0F0F10] text-[#FAFAFA] border border-neutral-800 flex items-start gap-4">
-                <div className="p-2.5 rounded-xl bg-[#B8FF2C] text-[#0F0F10] shrink-0 font-bold">
+                <div className="p-2.5 rounded-xl bg-[#F29A0F] text-[#0F0F10] shrink-0 font-bold">
                   <Cpu className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#B8FF2C] mb-1.5 font-semibold">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-[#F29A0F] mb-1.5 font-semibold">
                     Visão Técnica & Engenharia Full Stack
                   </h4>
                   <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed font-normal">

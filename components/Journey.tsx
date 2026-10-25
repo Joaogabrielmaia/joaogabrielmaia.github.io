@@ -6,7 +6,7 @@ import { Briefcase, GraduationCap, Crosshair, CheckCircle2 } from "lucide-react"
 
 export function Journey() {
   return (
-    <section id="jornada" className="py-24 relative overflow-hidden bg-neutral-900/5">
+    <section id="jornada" className="py-24 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Minha Jornada"
@@ -14,7 +14,7 @@ export function Journey() {
           description="Desenvolvimento de aplicações web Full Stack, arquitetura de sistemas e constante evolução técnica."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="slab grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* Card 1: Atualmente */}
           <motion.div
@@ -24,7 +24,7 @@ export function Journey() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-[#B8FF2C]/10 rounded-full blur-xl group-hover:bg-[#B8FF2C]/20 transition-all" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#F29A0F]/10 rounded-full blur-xl group-hover:bg-[#F29A0F]/20 transition-all" />
 
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -115,7 +115,7 @@ export function Journey() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between group"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 bg-[#B8FF2C]/20 rounded-full blur-xl group-hover:bg-[#B8FF2C]/30 transition-all" />
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#F29A0F]/20 rounded-full blur-xl group-hover:bg-[#F29A0F]/30 transition-all" />
 
             <div>
               <div className="flex items-center justify-between mb-6">
@@ -142,7 +142,7 @@ export function Journey() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#0F0F10] text-[#FAFAFA] hover:bg-[#B8FF2C] hover:text-[#0F0F10] transition-colors cursor-default"
+                    className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#0F0F10] text-[#FAFAFA] hover:bg-[#F29A0F] hover:text-[#0F0F10] transition-colors cursor-default"
                   >
                     {tag}
                   </span>

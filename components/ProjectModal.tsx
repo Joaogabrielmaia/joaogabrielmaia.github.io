@@ -102,14 +102,14 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {imageList.length > 1 && (
               <>
                 {/* Counter Badge */}
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#B8FF2C] font-mono text-xs font-bold border border-white/10 z-20">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#F29A0F] font-mono text-xs font-bold border border-white/10 z-20">
                   {currentImageIndex + 1} / {imageList.length}
                 </div>
 
                 {/* Left Arrow */}
                 <button
                   onClick={handlePrevImage}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 text-white hover:bg-black hover:text-[#B8FF2C] transition-all border border-white/10 shadow-lg z-20"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 text-white hover:bg-black hover:text-[#F29A0F] transition-all border border-white/10 shadow-lg z-20"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -118,7 +118,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 {/* Right Arrow */}
                 <button
                   onClick={handleNextImage}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 text-white hover:bg-black hover:text-[#B8FF2C] transition-all border border-white/10 shadow-lg z-20"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 text-white hover:bg-black hover:text-[#F29A0F] transition-all border border-white/10 shadow-lg z-20"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -132,7 +132,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                       onClick={() => setCurrentImageIndex(idx)}
                       className={`h-2 rounded-full transition-all ${
                         idx === currentImageIndex
-                          ? "w-6 bg-[#B8FF2C]"
+                          ? "w-6 bg-[#F29A0F]"
                           : "w-2 bg-white/50 hover:bg-white"
                       }`}
                       aria-label={`Go to slide ${idx + 1}`}
@@ -145,7 +145,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Banner Title Overlay */}
             <div className="absolute bottom-4 left-6 right-6 z-10">
               {project.award && (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#B8FF2C] text-[#0F0F10] mb-2 shadow-sm">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#F29A0F] text-[#0F0F10] mb-2 shadow-sm">
                   <Award className="w-4 h-4" />
                   {project.award}
                 </div>
@@ -206,7 +206,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             {/* Metrics if available */}
             {project.metrics && project.metrics.length > 0 && (
               <div className="p-4 rounded-2xl bg-[#0F0F10] text-[#FAFAFA]">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#B8FF2C] mb-2 flex items-center gap-1.5">
+                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-[#F29A0F] mb-2 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" /> Indicadores & Métricas Chave
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
@@ -243,7 +243,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0F0F10] text-[#FAFAFA] font-semibold text-xs hover:bg-black transition-colors shadow-md border border-neutral-800"
                 >
                   <span>Acessar Demo</span>
-                  <ExternalLink className="w-4 h-4 text-[#B8FF2C]" />
+                  <ExternalLink className="w-4 h-4 text-[#F29A0F]" />
                 </a>
               )}
             </div>

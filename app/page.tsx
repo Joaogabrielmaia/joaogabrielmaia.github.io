@@ -12,7 +12,7 @@ import { ParticleWaveCanvas } from "@/components/ui/ParticleWaveCanvas";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col selection:bg-[#B8FF2C] selection:text-[#0F0F10] relative">
+    <main className="min-h-screen flex flex-col selection:bg-[#5ed29c] selection:text-[#070b0a] relative">
       {/* Background Animated Particle Wave Grid */}
       <ParticleWaveCanvas />
 

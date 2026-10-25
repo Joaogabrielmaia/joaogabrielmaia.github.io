@@ -57,7 +57,7 @@ const certifications = [
 
 export function Certifications() {
   return (
-    <section id="certificacoes" className="py-24 relative overflow-hidden bg-neutral-900/5">
+    <section id="certificacoes" className="py-24 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Certificações"
@@ -65,7 +65,7 @@ export function Certifications() {
           description="Validações de conhecimento em engenharia de software, banco de dados, inteligência artificial, dados e metodologias ágeis."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="slab slab-green grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.title}
@@ -75,14 +75,14 @@ export function Certifications() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="glass-card p-6 rounded-3xl flex flex-col justify-between group relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-20 h-20 bg-[#B8FF2C]/10 rounded-full blur-xl group-hover:bg-[#B8FF2C]/20 transition-all" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-[#F29A0F]/10 rounded-full blur-xl group-hover:bg-[#F29A0F]/20 transition-all" />
 
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[11px] font-mono font-semibold uppercase px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-700 border border-neutral-200">
                     {cert.category}
                   </span>
-                  <div className="p-2 rounded-xl bg-[#0F0F10] text-[#B8FF2C]">
+                  <div className="p-2 rounded-xl bg-[#0F0F10] text-[#F29A0F]">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                 </div>
@@ -114,10 +114,10 @@ export function Certifications() {
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-[#0F0F10] text-[#FAFAFA] text-xs font-semibold hover:bg-black hover:text-[#B8FF2C] transition-all flex items-center justify-center gap-2 group/btn border border-neutral-800"
+                  className="w-full py-2.5 px-4 rounded-xl bg-[#0F0F10] text-[#FAFAFA] text-xs font-semibold hover:bg-black hover:text-[#F29A0F] transition-all flex items-center justify-center gap-2 group/btn border border-neutral-800"
                 >
                   <span>Verificar Credencial</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-[#B8FF2C] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  <ExternalLink className="w-3.5 h-3.5 text-[#F29A0F] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
             </motion.div>

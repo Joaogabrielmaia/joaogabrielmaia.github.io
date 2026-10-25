@@ -2,163 +2,200 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Download,
-  Mail,
-  Sparkles,
-} from "lucide-react";
+import { ArrowRight, Download, Mail, Sparkle } from "lucide-react";
+import { ArrowPill, MonogramBadge } from "./ui/Decor";
 import { GithubIcon, LinkedinIcon } from "./ui/Icons";
+
+const stack = ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "IA"];
+
+/** Cartão branco de cantos largos com linha-régua e brilhos, como no modelo */
+function Frame({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-[2.25rem] bg-[#f8f8f7] p-5 shadow-[0_22px_30px_-20px_rgba(0,0,0,0.55),inset_0_1px_0_#fff] ${className}`}
+    >
+      <div className="rule-dots mb-4 opacity-80" />
+      <Sparkle className="absolute right-5 top-14 w-4 h-4 text-neutral-400" />
+      {children}
+      <div className="wave-bars pointer-events-none absolute inset-x-0 bottom-0 h-14" />
+    </div>
+  );
+}
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
-      {/* Ambient Glow Backdrops */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#B8FF2C]/20 blur-[130px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-[#0F0F10]/5 blur-[100px] rounded-full pointer-events-none -z-10" />
+    <section className="relative pt-28 sm:pt-32 pb-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Faixa superior */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center justify-between border-y border-black/20 py-2.5 font-display text-lg sm:text-3xl text-neutral-500"
+        >
+          <span>
+            <b className="font-bold">Built</b> to Inspire
+          </span>
+          <b className="hidden sm:inline font-bold">2026</b>
+          <ArrowPill />
+        </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Text & Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col items-start"
+        {/* Título gigante gravado + script laranja */}
+        <div className="relative mt-16 sm:mt-24">
+          <motion.span
+            initial={{ opacity: 0, x: -30, rotate: -10 }}
+            animate={{ opacity: 1, x: 0, rotate: -6 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="font-script absolute -top-10 sm:-top-20 left-0 z-10 text-5xl sm:text-8xl text-[#F29A0F] pointer-events-none select-none"
           >
-            {/* Pill Tag */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#0F0F10] text-[#FAFAFA] border border-neutral-800 shadow-sm mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#B8FF2C] animate-pulse" />
-              <span>Software Engineer</span>
-            </div>
+            software engineer
+          </motion.span>
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-[#0F0F10] leading-[1.1] mb-4">
-              João Gabriel <br className="hidden sm:inline" />
-              <span className="text-neutral-500 font-normal">Maia</span>
-            </h1>
+          <div className="absolute right-0 -top-2 sm:top-0 flex flex-col items-end gap-3">
+            <MonogramBadge size={56} className="hidden sm:inline-flex" />
+            <span className="font-display font-bold text-xs sm:text-xl text-[#7a8c57] tracking-wide text-right leading-tight">
+              FULL STACK
+              <br />· AI ·
+            </span>
+          </div>
 
-            {/* Sub-headline Pill / Role */}
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono font-semibold px-3.5 py-1.5 rounded-md bg-[#B8FF2C] text-[#0F0F10] mb-6 shadow-sm">
-              <Sparkles className="w-4 h-4" />
-              <span>Software Engineer • Full Stack Developer • AI</span>
-            </div>
-
-            {/* Bio Text */}
-            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mb-8 font-normal">
-              Graduando em Engenharia de Software pela PUC Minas, desenvolvendo aplicações web Full Stack com JavaScript, TypeScript, React, Next.js, Node.js, PostgreSQL, APIs REST e Inteligência Artificial, utilizando conhecimentos de requisitos e negócios como diferencial.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto">
-              {/* Ver Projetos */}
-              <a
-                href="#projetos"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#0F0F10] text-[#FAFAFA] font-semibold text-sm hover:bg-black hover:scale-[1.02] active:scale-[0.98] transition-all border border-neutral-800 shadow-md group"
-              >
-                <span>Ver Projetos</span>
-                <ArrowRight className="w-4 h-4 text-[#B8FF2C] group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              {/* Download CV */}
-              <a
-                href="/cv.pdf"
-                download="Joao_Gabriel_CV.pdf"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white text-[#0F0F10] font-semibold text-sm hover:bg-neutral-50 transition-all border border-neutral-200/90 shadow-2xs hover:border-neutral-400"
-              >
-                <Download className="w-4 h-4 text-neutral-600" />
-                <span>Download CV</span>
-              </a>
-
-              {/* Social Links */}
-              <div className="flex items-center gap-2 ml-0 sm:ml-2 pt-2 sm:pt-0">
-                <a
-                  href="https://www.linkedin.com/in/joãogabrielmaia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="p-3 rounded-xl bg-white text-neutral-700 hover:text-[#0F0F10] hover:bg-neutral-100 border border-neutral-200/90 transition-all shadow-2xs"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="https://github.com/Joaogabrielmaia"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub"
-                  className="p-3 rounded-xl bg-white text-neutral-700 hover:text-[#0F0F10] hover:bg-neutral-100 border border-neutral-200/90 transition-all shadow-2xs"
-                >
-                  <GithubIcon className="w-4 h-4" />
-                </a>
-
-                <a
-                  href="mailto:Joaogabrielmaia092@gmail.com"
-                  aria-label="Email"
-                  className="p-3 rounded-xl bg-white text-neutral-700 hover:text-[#0F0F10] hover:bg-neutral-100 border border-neutral-200/90 transition-all shadow-2xs"
-                >
-                  <Mail className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Circular Profile Photo with Animated Spaced Contour Ring */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative flex justify-center items-center py-6"
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="deboss font-display font-extrabold uppercase leading-[0.86] tracking-[-0.04em] text-[17vw] sm:text-[15vw] lg:text-[13.5rem]"
           >
-            <div className="relative flex items-center justify-center">
-              
-              {/* Outer Animated Circular Contour Ring 1 (Dashed Lime & Dark Accent) */}
-              <motion.div
-                animate={{
-                  rotate: 360,
-                  scale: [0.98, 1.03, 0.98],
-                }}
-                transition={{
-                  rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-                }}
-                className="absolute w-[122%] h-[122%] rounded-full border-2 border-dashed border-[#B8FF2C] opacity-80 pointer-events-none"
-              />
+            João
+            <br />
+            Maia
+          </motion.h1>
+        </div>
 
-              {/* Outer Animated Circular Contour Ring 2 (Subtle Pulse Border with Margin) */}
-              <motion.div
-                animate={{
-                  rotate: -360,
-                  scale: [1.03, 0.97, 1.03],
-                }}
-                transition={{
-                  rotate: { duration: 45, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-                }}
-                className="absolute w-[132%] h-[132%] rounded-full border border-neutral-300/60 opacity-60 pointer-events-none"
-              />
-
-              {/* Glowing Aura Behind Avatar */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#B8FF2C]/30 via-emerald-400/20 to-transparent rounded-full blur-2xl transform scale-90" />
-
-              {/* Circular Photo Container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full p-2.5 bg-white/70 backdrop-blur-md border border-white/90 shadow-2xl overflow-hidden flex items-center justify-center group z-10">
-                <div className="relative w-full h-full rounded-full overflow-hidden border border-neutral-200/80 shadow-inner">
+        {/* Placa com três cartões */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+          className="slab mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5"
+        >
+          {/* Cartão 1: foto em moldura cortada */}
+          <Frame className="relative z-10 min-h-[22rem]">
+            <div className="flex gap-4">
+              <div className="relative w-[46%] aspect-[3/4] shrink-0">
+                <div className="absolute inset-0 bg-[#F29A0F]/70 [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]" />
+                <div className="absolute inset-[2px] overflow-hidden [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]">
                   <Image
                     src="/avatar.jpg"
                     alt="João Gabriel Maia"
                     fill
                     priority
-                    className="object-cover object-center rotate-[6.5deg] scale-[1.12] group-hover:scale-[1.16] transition-transform duration-700 ease-out"
+                    className="object-cover object-center"
                   />
                 </div>
               </div>
-
+              <div className="flex min-w-0 flex-col justify-center">
+                <span className="font-display text-xs text-neutral-500">
+                  PUC Minas
+                </span>
+                <h3 className="font-display font-extrabold text-xl leading-[1.05] text-[#F29A0F]">
+                  Engenharia
+                  <br />
+                  <span className="text-[#161616]">de Software</span>
+                </h3>
+                <p className="mt-2 text-[11px] leading-snug text-neutral-600">
+                  APIs, dados e Inteligência Artificial.
+                </p>
+              </div>
             </div>
-          </motion.div>
+            <div className="mt-5 flex gap-2">
+              <a
+                href="#projetos"
+                className="rounded-sm bg-[#3b8be8] px-3 py-1.5 text-[11px] font-semibold text-white"
+              >
+                Ver projetos
+              </a>
+              <a
+                href="#sobre"
+                className="rounded-sm border border-neutral-500 px-3 py-1.5 text-[11px] font-semibold text-neutral-700"
+              >
+                Sobre
+              </a>
+            </div>
+          </Frame>
 
-        </div>
+          {/* Cartão 2: stack */}
+          <Frame className="relative z-10 min-h-[22rem] text-center">
+            <h3 className="font-display font-extrabold text-3xl leading-[1.05] text-[#F29A0F]">
+              Full Stack
+              <br />
+              <span className="text-[#161616]">Developer</span>
+            </h3>
+            <p className="mx-auto mt-3 max-w-[16rem] text-[11px] leading-snug text-neutral-600">
+              Aplicações web de ponta a ponta, do banco de dados à interface,
+              com requisitos e negócio como diferencial.
+            </p>
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              {stack.map((s) => (
+                <span
+                  key={s}
+                  className="rounded-md bg-[#F29A0F] px-2.5 py-1 text-[11px] font-bold text-[#161616]"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </Frame>
+
+          {/* Cartão 3: contatos */}
+          <Frame className="relative z-10 min-h-[22rem] text-center">
+            <h3 className="font-display font-extrabold text-3xl leading-[1.05] text-[#F29A0F]">
+              Vamos conversar
+              <br />
+              <span className="text-[#161616]">sobre ideias?</span>
+            </h3>
+            <div className="mt-6 flex flex-col items-center gap-3">
+              <a
+                href="#contato"
+                className="group inline-flex items-center gap-2 rounded-sm bg-[#F29A0F] px-5 py-2.5 text-xs font-bold text-[#161616] hover:bg-[#d98200] transition-colors"
+              >
+                Falar comigo
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="/cv.pdf"
+                download="Joao_Gabriel_CV.pdf"
+                className="inline-flex items-center gap-2 rounded-sm border border-neutral-500 px-4 py-2 text-xs font-semibold text-neutral-700 hover:border-[#F29A0F] transition-colors"
+              >
+                <Download className="w-3.5 h-3.5" />
+                Baixar CV
+              </a>
+              <div className="flex items-center gap-2 pt-1">
+                {[
+                  { href: "https://www.linkedin.com/in/joãogabrielmaia", label: "LinkedIn", Icon: LinkedinIcon },
+                  { href: "https://github.com/Joaogabrielmaia", label: "GitHub", Icon: GithubIcon },
+                  { href: "mailto:Joaogabrielmaia092@gmail.com", label: "Email", Icon: Mail },
+                ].map(({ href, label, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="rounded-full border border-neutral-400 p-2.5 text-neutral-700 hover:bg-[#F29A0F] hover:border-[#F29A0F] transition-colors"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Frame>
+        </motion.div>
       </div>
     </section>
   );
