@@ -3,9 +3,9 @@
 Branch `feat/portfolio-v2` · 25/10/2026 · PR aberto para revisão, **sem merge**.
 
 ## O que foi feito
-- **Modelo de conteúdo** em `content/` (perfil, 8 áreas, 2 experiências, 11 projetos, competências, 9 certificações), validado com Zod no build. Adicionar um projeto = um arquivo.
+- **Modelo de conteúdo** em `content/` (perfil, 8 áreas, 2 experiências, 8 projetos, competências, 9 certificações), validado com Zod no build. Adicionar um projeto = um arquivo.
 - **Home em camadas:** hero com provas → onde posso ajudar (8 áreas) → 4 projetos em destaque → experiência → sobre e o que busco → competências → certificações → contato.
-- **24 páginas de conteúdo (todas estáticas):** `/projetos` (com filtro por área), 11 páginas de projeto (7 estudos de caso com a caixa "Sobre este cenário", 3 anteriores e o ERP Vortex só em texto), 2 de experiência (Hotmart e atuação autônoma, com os casos reais e a prospecção), 8 de área e `/sobre`.
+- **24 páginas de conteúdo (todas estáticas):** `/projetos` (com filtro por área), 8 páginas de projeto (7 estudos de caso com a caixa "Sobre este cenário" e o ERP Vortex só em texto; os 3 projetos antigos foram removidos depois), 2 de experiência (Hotmart e atuação autônoma, com os casos reais e a prospecção), 8 de área e `/sobre`.
 - **Material dos 7 repositórios:** 94 prints em WebP (1280 px e miniatura de 640 px), 12 diagramas (9 SVG renderizados com `mermaid-cli` e 3 WebP do Trilha), PDF de exemplo do Mapa. Todos os números de teste foram lidos dos READMEs atuais e conferidos por script.
 - **Acessibilidade e SEO:** link "pular para o conteúdo", foco visível, `<dialog>` na galeria, `aria-expanded` nos expansores, `prefers-reduced-motion`, metadados e canonical por página, Open Graph e Twitter Card por projeto, `sitemap.xml` e `robots.txt` gerados, JSON-LD `Person`.
 - **Identidade visual mantida** (papel cinza, laranja e verde-oliva), modernizada.

@@ -8,9 +8,9 @@ const publico = (...p: string[]) => join(process.cwd(), "public", ...p);
 const tudoEmTexto = JSON.stringify({ projects, roles, experiences, certifications, profile });
 
 describe("modelo de conteúdo", () => {
-  it("tem as 8 áreas, 11 projetos e 2 experiências", () => {
+  it("tem as 8 áreas, 8 projetos e 2 experiências", () => {
     expect(roles.map((r) => r.slug).sort()).toEqual([...areaSlugs].sort());
-    expect(projects).toHaveLength(11);
+    expect(projects).toHaveLength(8);
     expect(experiences.map((e) => e.slug).sort()).toEqual(["desenvolvedor-full-stack-autonomo", "hotmart-suporte-ti"]);
     expect(certifications).toHaveLength(9);
   });

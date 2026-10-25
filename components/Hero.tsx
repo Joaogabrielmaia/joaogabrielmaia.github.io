@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Bot, Code2, Download, FlaskConical, Kanban } from "lucide-react";
 import { ArrowPill, MonogramBadge } from "./ui/Decor";
 import { profile } from "@/content";
+
+const icones = { code: Code2, bot: Bot, teste: FlaskConical, metodo: Kanban } as const;
 
 export function Hero() {
   return (
@@ -15,7 +17,7 @@ export function Hero() {
         <div className="flex items-center justify-between border-y border-black/20 py-2.5 font-display text-lg sm:text-3xl text-neutral-500"
         >
           <span>
-            <b className="font-bold">Built</b> to Inspire
+            Feito para <b className="font-bold">durar</b>
           </span>
           <b className="hidden sm:inline font-bold">2026</b>
           <ArrowPill />
@@ -30,7 +32,7 @@ export function Hero() {
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-script absolute -top-10 sm:-top-20 left-0 z-10 text-5xl sm:text-8xl text-[#F29A0F] pointer-events-none select-none"
           >
-            clientes & automação
+            software, automação & IA
           </motion.span>
 
           <div className="absolute right-0 -top-2 sm:top-0 hidden sm:flex flex-col items-end gap-3">
@@ -79,7 +81,7 @@ export function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7a8c57] opacity-60" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#7a8c57]" />
             </span>
-            {profile.hero.disponivel}
+            {profile.hero.selo}
           </p>
         </div>
 
@@ -99,13 +101,19 @@ export function Hero() {
             </div>
           </div>
 
-          <ul className="relative z-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
-            {profile.provas.map((prova) => (
-              <li key={prova.rotulo} className="glass-card flex flex-col justify-center gap-3 p-5">
-                <span className="font-condensed text-6xl leading-none text-[#7a8c57]">{prova.valor}</span>
-                <p className="text-sm leading-snug text-neutral-700">{prova.rotulo}</p>
-              </li>
-            ))}
+          <ul className="relative z-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {profile.pontos.map((p) => {
+              const Icone = icones[p.icone];
+              return (
+                <li key={p.titulo} className="glass-card flex flex-col gap-3 p-5">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#7a8c57]/20 text-[#4b5a30]">
+                    <Icone className="h-5 w-5" aria-hidden />
+                  </span>
+                  <h2 className="font-condensed text-3xl uppercase leading-none text-[#5b6b3e]">{p.titulo}</h2>
+                  <p className="text-sm leading-snug text-neutral-700">{p.texto}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

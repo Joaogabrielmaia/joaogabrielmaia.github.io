@@ -106,7 +106,7 @@ const raw = [
     cargo: "Aprendiz de Suporte de TI",
     organizacao: "Hotmart",
     periodo: "jul/2025 — mar/2026 (9 meses)",
-    local: "Belo Horizonte · meio período, presencial",
+    local: "meio período, presencial",
     atual: false,
     resumo:
       "Atendi colaboradores e áreas internas, conduzi rollouts de máquinas e de telefonia, cuidei das salas de reunião e fiz uma automação simples que desliga as TVs da empresa.",

@@ -6,7 +6,7 @@ export const skills: SkillGroup[] = z.array(SkillGroupSchema).parse([
   { grupo: "Dados e APIs", destaque: true, itens: ["PostgreSQL", "SQLite", "SQL", "Prisma ORM", "APIs REST", "Integrações HTTP e webhooks", "Modelagem relacional", "Power BI e DAX"] },
   { grupo: "IA e automação", destaque: true, itens: ["IA generativa", "Agentes de IA", "Engenharia de prompts", "RAG", "n8n", "Automação de processos", "Groq API", "OpenAI API"] },
   { grupo: "Gestão e requisitos", destaque: true, itens: ["Scrum", "Kanban", "Planejamento de sprints", "Refinamento de backlog", "Métricas ágeis", "Noções de PMBOK", "Discovery", "Levantamento de requisitos", "Regras de negócio", "Especificação funcional", "Alinhamento com stakeholders"] },
-  { grupo: "Clientes e vendas", destaque: false, itens: ["Discovery", "Explicar trade-offs a não técnicos", "Prospecção por ligação e WhatsApp", "CRM (Pipedrive como usuário; CRMs sob medida)"] },
+  { grupo: "Comunicação e vendas", destaque: false, itens: ["Discovery", "Explicar trade-offs a não técnicos", "Prospecção por ligação e WhatsApp", "CRM (Pipedrive como usuário; CRMs sob medida)"] },
   { grupo: "Qualidade", destaque: false, itens: ["Testes unitários, de integração e E2E (Vitest, Playwright)", "Testes de contrato", "ADRs", "Rastreabilidade"] },
   { grupo: "Ferramentas", destaque: false, itens: ["Git", "GitHub", "Jira", "VS Code", "Docker (uso local)", "Workspace ONE (MDM)", "Zoom Rooms"] },
   { grupo: "Idiomas", destaque: false, itens: ["Português nativo", "Inglês básico"] },

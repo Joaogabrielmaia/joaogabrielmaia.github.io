@@ -11,8 +11,8 @@ export function RolesSection() {
         <SectionHeader
           titleId="areas-titulo"
           badge="Áreas"
-          title="Áreas em que tenho experiência"
-          description="Oito áreas em que já atuei ou construí algo. Cada uma tem uma página com projetos e experiências ligados a ela."
+          title="Em que tenho experiência"
+          description="Oito competências que apliquei em projetos e no trabalho. Cada uma tem uma página com os projetos e as experiências ligados a ela."
         />
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {roles.map((r) => {

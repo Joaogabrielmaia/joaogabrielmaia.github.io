@@ -15,7 +15,7 @@ const anton = Anton({ variable: "--font-condensed", subsets: ["latin"], weight: 
 const pinyon = Pinyon_Script({ variable: "--font-script", subsets: ["latin"], weight: "400", display: "swap" });
 
 const descricao =
-  "Engenharia de Software (PUC Minas). 7 projetos documentados de ponta a ponta, experiência com clientes e prêmio de Melhor Trabalho Interdisciplinar.";
+  "Engenharia de Software (PUC Minas). 7 projetos documentados de ponta a ponta, automação com IA e prêmio de Melhor Trabalho Interdisciplinar.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
