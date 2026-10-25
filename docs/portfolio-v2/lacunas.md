@@ -13,7 +13,7 @@ Tudo o que ficou de fora, foi cortado ou precisa de decisão do João. Nada diss
 
 ## Links e credenciais
 8. **GerêncieJá, PM Copilot e demo sem link (confirmado pelo João em 25/10/2026):** não existem mais links públicos; as páginas ficam só com texto.
-9. **Certificações:** 8 de 9 têm link de credencial, montado a partir dos códigos do LinkedIn. **Verificadas** (página pública conferida com nome e curso): 2 da Alura e IBM/Credly. **Sem o selo:** 4 da Udemy (bloqueiam robôs, 403) e Google/Coursera (a página responde 200 para qualquer código): abrir uma vez e conferir. **Sem link:** Microsoft/LinkedIn (o LinkedIn só mostra o código). Para dar o selo, marcar `verificado: true` em `content/skills.ts`.
+9. **Certificações:** as 9 estão com selo "Verificada" (confirmado pelo João). 8 têm link de credencial; a Career Essentials in Generative AI (Microsoft/LinkedIn) é nativa do LinkedIn e não tem página pública (o card mostra "Credencial nativa do LinkedIn").
 10. **LinkedIn:** o link responde 999 a robôs (bloqueio do LinkedIn), então o verificador só avisa. Conferir à mão.
 11. **Projetos antigos removidos do site (25/10/2026, pedido do João):** GerêncieJá, PM Copilot e Dashboard Executivo Power BI. Ficam 8 projetos: os 7 estudos de caso e o ERP Vortex. Não há localização (cidade) nem "disponível para oportunidades" no site.
 

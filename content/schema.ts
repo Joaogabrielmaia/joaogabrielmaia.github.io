@@ -170,5 +170,8 @@ export const CertificationSchema = z.object({
   /** Link só quando confirmado como credencial correta. */
   urlCredencial: Url.optional(),
   verificado: z.boolean().default(false),
+  /** Código da credencial (mostrado quando não há link público). */
+  codigo: z.string().optional(),
+  nota: z.string().optional(),
 });
 export type Certification = z.infer<typeof CertificationSchema>;
