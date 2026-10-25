@@ -31,6 +31,18 @@ export const profileEn = {
 
 export const rolesEn = [
   {
+    nome: "Full stack development",
+    nomeCurto: "Full stack",
+    pitch: "I build complete web applications, from the database to the interface, with automated tests.",
+    oQueFaz: "Builds and maintains web applications end to end: database modeling, APIs, interface and automated tests.",
+    oQueValoriza: "Clear, tested code, well-defined APIs, data modeling and frequent deliveries.",
+    evidencias: [
+      { texto: "Applications with TypeScript, React, Next.js, Node.js, PostgreSQL and Prisma since Apr 2026, from APIs and integrations to the interface." },
+      { texto: "Development on the Vortex ERP (JavaScript/TypeScript ecosystem), besides managing the project." },
+    ],
+    competencias: ["TypeScript", "React and Next.js", "Node.js and REST APIs", "PostgreSQL and Prisma", "Automated testing"],
+  },
+  {
     nome: "Systems implementation",
     nomeCurto: "Systems implementation",
     pitch: "I get a system running in daily routine: current process, setup, go-live and follow-up afterwards.",

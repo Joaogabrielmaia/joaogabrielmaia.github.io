@@ -29,6 +29,7 @@ export const trilha = ProjectSchema.parse({
     { area: "analista-projetos", nivel: "principal", evidencia: "Backlog organizado em sprints, rastreabilidade e riscos documentados." },
     { area: "negocios-requisitos", nivel: "principal", evidencia: "Contradições levantadas no discovery viraram regras de negócio e testes." },
     { area: "consultor-solucoes", nivel: "relacionado", evidencia: "Cada decisão de arquitetura tem alternativas e custo registrados em ADR." },
+    { area: "desenvolvimento-full-stack", nivel: "principal", evidencia: "Aplicação Next.js com TypeScript, Prisma e PostgreSQL: autenticação própria, camada de serviços, portal público e 156 testes." },
   ],
   destaques: [
     "Atraso da equipe separado da espera do cliente",

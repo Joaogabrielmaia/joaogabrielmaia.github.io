@@ -24,6 +24,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Backlog organized in sprints, with traceability and documented risks." },
       { evidencia: "Contradictions found in discovery became business rules and tests." },
       { evidencia: "Each architecture decision has alternatives and cost recorded in an ADR." },
+      { evidencia: "A Next.js application with TypeScript, Prisma and PostgreSQL: own authentication, a service layer, a public portal and 156 tests." },
     ],
     destaques: [
       "Team delay separated from customer wait",
@@ -124,6 +125,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "The post-quote follow-up has controlled tone and frequency." },
       { evidencia: "Go-live, rollback and training plans documented." },
       { evidencia: "The same automation discipline, here without AI." },
+      { evidencia: "Next.js, Prisma and PostgreSQL, with 200 unit and integration tests and 16 E2E." },
     ],
     destaques: [
       "Only sends during business hours: outside them the message waits in the queue",
@@ -205,6 +207,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "The agent starts in “suggestion mode” before answering on its own (rollout plan)." },
       { evidencia: "Each choice (RAG instead of fine-tuning, confidence threshold) has an ADR with alternatives." },
       { evidencia: "Explicit business rules for sensitive topics, such as refunds." },
+      { evidencia: "A Next.js application with PostgreSQL search (pgvector), an attendant queue and a dashboard, with 83 Vitest tests and 14 E2E." },
     ],
     destaques: [
       "Honest refusal when it does not have the information",
@@ -298,6 +301,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Goes live in “shadow mode”, alongside the manual process." },
       { evidencia: "Measurement method and risks documented." },
       { evidencia: "The gain estimate comes with a visible formula and editable inputs." },
+      { evidencia: "Next.js, Prisma and PostgreSQL, with business rules in typed code, 80 tests and 5 E2E." },
     ],
     destaques: [
       "n8n orchestrates the intake (retry and alert); the rules live in typed, tested code",
@@ -376,6 +380,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Discovery by area, written criteria and weights, and a pre-scope." },
       { evidencia: "30/60/90-day roadmap from the quadrants." },
       { evidencia: "Suggested implementation order based on effort and capacity in hours." },
+      { evidencia: "Next.js, TypeScript and Prisma, with a scoring engine in pure functions (100% coverage on that module) and a PDF report." },
     ],
     destaques: [
       "Potential = 20% frequency + 15% volume + 25% repetitiveness + 40% impact",
@@ -461,6 +466,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Resolves the contradiction between “a single number” and “context” by showing both." },
       { evidencia: "The adoption dimension looks at what the customer uses after going live." },
       { evidencia: "Requirements and analytical rules of the score documented." },
+      { evidencia: "Next.js, TypeScript and Prisma, with a tested scoring engine: 76 unit, 5 integration and 14 E2E tests." },
     ],
     destaques: [
       "Weights: adoption 25, engagement 20, support 15, satisfaction 15, financial 15, contract 10",
@@ -533,6 +539,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Explains each decision with an alternative, cost and “when I would change it”." },
       { evidencia: "Data map and rules between CRM and ERP traced down to the tests." },
       { evidencia: "The same integration and failure discipline, here without AI." },
+      { evidencia: "A TypeScript monorepo (Fastify, PostgreSQL and Prisma), with 193 tests." },
     ],
     destaques: [
       "Idempotency in three layers",
@@ -625,6 +632,7 @@ export const projectsEn: Record<string, Record<string, unknown>> = {
       { evidencia: "Manager of an 8-person team, with Scrum in sprints." },
       { evidencia: "Discovery, functional and non-functional requirements and business rules." },
       { evidencia: "Prototypes presented to the client and continuous feedback." },
+      { evidencia: "Development in the JavaScript and TypeScript ecosystem, besides managing the project." },
     ],
     destaques: ["Best Interdisciplinary Project in Software Engineering", "Team of 8 people", "Scrum, prototypes and continuous feedback"],
     texto: [

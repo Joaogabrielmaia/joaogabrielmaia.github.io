@@ -28,6 +28,7 @@ export const termometro = ProjectSchema.parse({
     { area: "consultor-solucoes", nivel: "relacionado", evidencia: "Resolve a contradição entre “um número só” e “contexto” mostrando os dois." },
     { area: "implantacao", nivel: "relacionado", evidencia: "A dimensão de adoção olha o que o cliente usa depois da entrada em uso." },
     { area: "negocios-requisitos", nivel: "relacionado", evidencia: "Requisitos e regras analíticas do score documentados." },
+    { area: "desenvolvimento-full-stack", nivel: "principal", evidencia: "Next.js, TypeScript e Prisma, com motor de score testado: 76 unitários, 5 de integração e 14 E2E." },
   ],
   destaques: [
     "Pesos: adoção 25, engajamento 20, suporte 15, satisfação 15, financeiro 15, contrato 10",

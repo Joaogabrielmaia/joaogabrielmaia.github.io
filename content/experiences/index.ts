@@ -90,6 +90,7 @@ const raw = [
       "Explicar o custo de cada escolha dá ao cliente confiança para decidir.",
     ],
     areas: [
+      "desenvolvimento-full-stack",
       "implantacao",
       "consultor-solucoes",
       "analista-projetos",

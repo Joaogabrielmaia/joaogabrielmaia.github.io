@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const areaSlugs = [
+  "desenvolvimento-full-stack",
   "implantacao",
   "consultor-automacao-ia",
   "analista-automacao",

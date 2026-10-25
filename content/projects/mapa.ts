@@ -29,6 +29,7 @@ export const mapa = ProjectSchema.parse({
     { area: "negocios-requisitos", nivel: "principal", evidencia: "Levantamento por área, critérios e pesos escritos, e pré-escopo." },
     { area: "analista-projetos", nivel: "relacionado", evidencia: "Roteiro de 30/60/90 dias a partir dos quadrantes." },
     { area: "implantacao", nivel: "relacionado", evidencia: "Ordem de implantação sugerida a partir do esforço e da capacidade em horas." },
+    { area: "desenvolvimento-full-stack", nivel: "principal", evidencia: "Next.js, TypeScript e Prisma, com motor de pontuação em funções puras (100% de cobertura nesse módulo) e relatório em PDF." },
   ],
   destaques: [
     "Potencial = 20% frequência + 15% volume + 25% repetitividade + 40% impacto",

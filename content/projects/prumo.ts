@@ -30,6 +30,7 @@ export const prumo = ProjectSchema.parse({
     { area: "implantacao", nivel: "relacionado", evidencia: "O agente entra em “modo sugestão” antes de responder sozinho (plano de rollout)." },
     { area: "consultor-solucoes", nivel: "relacionado", evidencia: "Cada escolha (RAG em vez de ajuste fino, limiar de confiança) tem ADR com alternativas." },
     { area: "negocios-requisitos", nivel: "relacionado", evidencia: "Regras de negócio explícitas para assuntos sensíveis, como reembolso." },
+    { area: "desenvolvimento-full-stack", nivel: "principal", evidencia: "Aplicação Next.js com busca em PostgreSQL (pgvector), fila do atendente e painel, com 83 testes Vitest e 14 E2E." },
   ],
   destaques: [
     "Recusa honesta quando não tem a informação",

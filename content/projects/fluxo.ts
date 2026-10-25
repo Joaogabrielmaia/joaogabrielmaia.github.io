@@ -30,6 +30,7 @@ export const fluxo = ProjectSchema.parse({
     { area: "implantacao", nivel: "relacionado", evidencia: "Entrada em uso em “modo sombra”, ao lado do processo manual." },
     { area: "analista-projetos", nivel: "relacionado", evidencia: "Método de medição e riscos documentados." },
     { area: "consultor-solucoes", nivel: "relacionado", evidencia: "A estimativa de ganho vem com fórmula visível e entradas editáveis." },
+    { area: "desenvolvimento-full-stack", nivel: "relacionado", evidencia: "Next.js, Prisma e PostgreSQL, com regras de negócio em código tipado, 80 testes e 5 E2E." },
   ],
   destaques: [
     "O n8n orquestra a entrada (retentativa e alerta); as regras ficam em código tipado e testado",

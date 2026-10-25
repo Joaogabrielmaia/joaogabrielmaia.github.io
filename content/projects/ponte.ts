@@ -32,6 +32,7 @@ export const ponte = ProjectSchema.parse({
     { area: "consultor-solucoes", nivel: "principal", evidencia: "Explica cada decisão com alternativa, custo e “quando eu mudaria”." },
     { area: "negocios-requisitos", nivel: "relacionado", evidencia: "Mapa de dados e regras entre CRM e ERP rastreados até os testes." },
     { area: "consultor-automacao-ia", nivel: "relacionado", evidencia: "Mesma disciplina de integração e falha, aqui sem IA." },
+    { area: "desenvolvimento-full-stack", nivel: "relacionado", evidencia: "Monorepo TypeScript (Fastify, PostgreSQL e Prisma), com 193 testes." },
   ],
   destaques: [
     "Idempotência em três camadas",

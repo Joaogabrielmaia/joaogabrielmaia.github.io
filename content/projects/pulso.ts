@@ -29,6 +29,7 @@ export const pulso = ProjectSchema.parse({
     { area: "customer-success", nivel: "relacionado", evidencia: "O follow-up pós-orçamento tem tom e frequência controlados." },
     { area: "implantacao", nivel: "relacionado", evidencia: "Plano de go-live, rollback e treinamento documentados." },
     { area: "consultor-automacao-ia", nivel: "relacionado", evidencia: "Mesma disciplina de automação, aqui sem IA." },
+    { area: "desenvolvimento-full-stack", nivel: "relacionado", evidencia: "Next.js, Prisma e PostgreSQL, com 200 testes de unidade e integração e 16 E2E." },
   ],
   destaques: [
     "Só envia em horário comercial: fora dele a mensagem espera na fila",

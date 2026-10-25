@@ -22,6 +22,7 @@ export const erpVortex = ProjectSchema.parse({
     { area: "analista-projetos", nivel: "principal", evidencia: "Gestor de um time de 8 pessoas, com Scrum em sprints." },
     { area: "negocios-requisitos", nivel: "principal", evidencia: "Discovery, requisitos funcionais e não funcionais e regras de negócio." },
     { area: "implantacao", nivel: "relacionado", evidencia: "Protótipos apresentados ao cliente e feedback contínuo." },
+    { area: "desenvolvimento-full-stack", nivel: "relacionado", evidencia: "Desenvolvimento no ecossistema JavaScript e TypeScript, além da gestão do projeto." },
   ],
   destaques: [
     "Melhor Trabalho Interdisciplinar de Engenharia de Software",

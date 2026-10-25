@@ -3,6 +3,20 @@ import { z } from "zod";
 
 const raw = [
   {
+    slug: "desenvolvimento-full-stack",
+    nome: "Desenvolvimento full stack",
+    nomeCurto: "Full stack",
+    pitch: "Construo aplicações web completas, do banco de dados à interface, com testes automatizados.",
+    oQueFaz:
+      "Constrói e mantém aplicações web de ponta a ponta: modelagem do banco, APIs, interface e testes automatizados.",
+    oQueValoriza: "Código claro e testado, APIs bem definidas, modelagem de dados e entregas frequentes.",
+    evidencias: [
+      { texto: "Aplicações com TypeScript, React, Next.js, Node.js, PostgreSQL e Prisma desde abr/2026, das APIs e integrações à interface.", fonte: "desenvolvedor-full-stack-autonomo" },
+      { texto: "Desenvolvimento no ERP Vortex (ecossistema JavaScript/TypeScript), além da gestão do projeto.", fonte: "erp-vortex" },
+    ],
+    competencias: ["TypeScript", "React e Next.js", "Node.js e APIs REST", "PostgreSQL e Prisma", "Testes automatizados"],
+  },
+  {
     slug: "implantacao",
     nome: "Implantação de sistemas",
     nomeCurto: "Implantação de sistemas",
