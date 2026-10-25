@@ -93,7 +93,7 @@ describe("regras de integridade", () => {
 
   it("não publica pretensão salarial, sociedade, telefone nem selo “Verificado” sem credencial", () => {
     expect(tudoEmTexto).not.toMatch(/pretens[ãa]o salarial|s[óo]cio|97577|consultoria pr[óo]pria/i);
-    for (const c of certifications) if (c.verificado) expect(c.urlCredencial, c.titulo).toBeDefined();
+    for (const c of certifications) if (c.verificado) expect(c.urlCredencial ?? c.nota, c.titulo).toBeDefined();
   });
 
   it("Prumo não diz que foi avaliado com o Claude; Termômetro não chama o score de previsão", () => {

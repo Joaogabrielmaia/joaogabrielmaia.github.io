@@ -8,6 +8,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Chip } from "@/components/ui/Chip";
 import { Toc } from "@/components/ui/Toc";
 import { Gallery } from "@/components/Gallery";
+import { RevealList } from "@/components/ui/RevealList";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -258,27 +259,11 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
           {p.roteiroLeitura.length > 0 && (
             <Secao id="leitura" titulo="Roteiro de leitura">
               <p className="mb-4 text-sm text-neutral-700">Sete passos para entender o projeto na ordem em que ele foi pensado:</p>
-              <ol className="space-y-2">
-                {p.roteiroLeitura.map((r) => (
-                  <li key={r.rotulo}>
-                    <a href={r.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#5b6b3e] underline-offset-2 hover:text-[#F29A0F] hover:underline">
-                      {r.rotulo} <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-                    </a>
-                  </li>
-                ))}
-              </ol>
+              <RevealList numerada itens={p.roteiroLeitura} />
               {p.documentos.length > 0 && (
                 <>
                   <h3 className="mt-8 font-display text-lg font-extrabold text-[#161616]">Documentos-chave</h3>
-                  <ul className="mt-2 grid gap-2 sm:grid-cols-2">
-                    {p.documentos.map((d) => (
-                      <li key={d.url}>
-                        <a href={d.url} target="_blank" rel="noopener noreferrer" className="text-sm text-neutral-800 underline-offset-2 hover:text-[#F29A0F] hover:underline">
-                          {d.rotulo}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-3"><RevealList colunas={2} itens={p.documentos} /></div>
                 </>
               )}
             </Secao>
