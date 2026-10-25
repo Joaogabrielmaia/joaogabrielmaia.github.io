@@ -11,14 +11,14 @@ import { fluxo } from "./projects/fluxo";
 import { mapa } from "./projects/mapa";
 import { termometro } from "./projects/termometro";
 import { ponte } from "./projects/ponte";
-import { gerencieja, pmCopilot, dashboardPowerBi, erpVortex } from "./projects/anteriores";
+import { erpVortex } from "./projects/anteriores";
 import type { AreaSlug, Project } from "./schema";
 
 export { profile, roles, roleBySlug, experiences, experienceBySlug, skills, certifications };
 
 export const projects: Project[] = [
   trilha, pulso, prumo, fluxo, mapa, termometro, ponte,
-  gerencieja, pmCopilot, dashboardPowerBi, erpVortex,
+  erpVortex,
 ].sort((a, b) => a.ordem - b.ordem);
 
 export const projectBySlug = (slug: string) => projects.find((p) => p.slug === slug);

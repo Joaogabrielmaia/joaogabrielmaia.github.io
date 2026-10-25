@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SectionHeader } from "../ui/SectionHeader";
-import { profile } from "@/content";
+import { profile, roles } from "@/content";
 
 export function AboutSummary() {
   return (
@@ -19,16 +19,18 @@ export function AboutSummary() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
             </Link>
           </div>
-          <dl className="glass-card space-y-4 p-7 text-sm">
-            <div>
-              <dt className="font-display font-bold text-[#5b6b3e]">Áreas de atuação</dt>
-              <dd className="mt-1 text-neutral-700">{profile.busca.funcoes}</dd>
-            </div>
-            <div>
-              <dt className="font-display font-bold text-[#5b6b3e]">Formato de trabalho</dt>
-              <dd className="mt-1 text-neutral-700">{profile.busca.formato}</dd>
-            </div>
-          </dl>
+          <div className="glass-card p-7">
+            <h3 className="font-display font-bold text-[#5b6b3e]">Competências</h3>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {roles.map((r) => (
+                <li key={r.slug}>
+                  <Link href={`/areas/${r.slug}`} className="inline-flex rounded-full border border-[#7a8c57]/40 bg-[#7a8c57]/10 px-3 py-1.5 text-xs font-semibold text-[#34401f] hover:bg-[#7a8c57] hover:text-[#fbfcf3] transition-colors">
+                    {r.nomeCurto}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -4,9 +4,9 @@ import { z } from "zod";
 const raw = [
   {
     slug: "implantacao",
-    nome: "Analista de Implantação",
-    nomeCurto: "Implantação",
-    pitch: "Entendo o processo do cliente, configuro, conduzo o go-live e acompanho depois.",
+    nome: "Implantação de sistemas",
+    nomeCurto: "Implantação de sistemas",
+    pitch: "Coloco um sistema para funcionar na rotina: processo atual, configuração, go-live e acompanhamento depois.",
     oQueFaz:
       "Coloca um sistema para funcionar na rotina real do cliente: entende o processo atual, configura, treina as pessoas, conduz a entrada em uso e acompanha o que acontece depois.",
     oQueValoriza:
@@ -20,8 +20,8 @@ const raw = [
   },
   {
     slug: "consultor-automacao-ia",
-    nome: "Consultor de Automação IA",
-    nomeCurto: "Automação IA",
+    nome: "Automação com IA",
+    nomeCurto: "Automação com IA",
     pitch: "Mapeio o que vale automatizar, construo, meço e documento os limites.",
     oQueFaz:
       "Descobre qual processo do cliente pode ser automatizado (com ou sem IA), constrói a solução, mede o resultado e explica com honestidade o que ela não faz.",
@@ -35,8 +35,8 @@ const raw = [
   },
   {
     slug: "analista-automacao",
-    nome: "Analista de Automação",
-    nomeCurto: "Automação",
+    nome: "Automação de processos e integrações",
+    nomeCurto: "Automação e integrações",
     pitch: "Fluxos confiáveis, com integração e tratamento de erro desde o primeiro dia.",
     oQueFaz:
       "Constrói e mantém fluxos que rodam sozinhos: integra sistemas, trata falhas, evita duplicidade e deixa um registro do que aconteceu.",
@@ -50,8 +50,8 @@ const raw = [
   },
   {
     slug: "customer-success",
-    nome: "Customer Success",
-    nomeCurto: "Customer Success",
+    nome: "Suporte e acompanhamento de uso",
+    nomeCurto: "Suporte e adoção",
     pitch: "Atendo o problema, acompanho o uso e sinalizo risco cedo.",
     oQueFaz:
       "Acompanha o cliente depois da venda: garante que ele use o produto, resolve o que trava, antecipa sinais de risco e ajuda na renovação.",
@@ -64,8 +64,8 @@ const raw = [
   },
   {
     slug: "sdr-bdr",
-    nome: "SDR / BDR",
-    nomeCurto: "SDR/BDR",
+    nome: "Prospecção e CRM",
+    nomeCurto: "Prospecção e CRM",
     pitch: "Prospecção, conversa e cadência, com CRM como ferramenta de trabalho.",
     oQueFaz:
       "Abre conversas com possíveis clientes, qualifica o interesse, mantém uma cadência de contato e registra tudo no CRM para o time de vendas.",
@@ -78,9 +78,9 @@ const raw = [
   },
   {
     slug: "consultor-solucoes",
-    nome: "Consultor de Soluções",
-    nomeCurto: "Soluções",
-    pitch: "Traduzo o problema do cliente em solução e explico os trade-offs.",
+    nome: "Desenho de soluções",
+    nomeCurto: "Desenho de soluções",
+    pitch: "Traduzo o problema em solução técnica e explico os trade-offs.",
     oQueFaz:
       "Entende a dor do cliente, desenha a solução, explica as escolhas (e o que se perde em cada uma) e apoia a venda do ponto de vista técnico.",
     oQueValoriza: "Traduzir problema em solução, explicar trade-offs e apoiar a venda.",
@@ -92,8 +92,8 @@ const raw = [
   },
   {
     slug: "analista-projetos",
-    nome: "Analista de Projetos",
-    nomeCurto: "Projetos",
+    nome: "Gestão de projetos e métodos ágeis",
+    nomeCurto: "Projetos e métodos ágeis",
     pitch: "Planejo, priorizo, acompanho a entrega e deixo os riscos visíveis.",
     oQueFaz:
       "Organiza o trabalho em etapas, prioriza o backlog, acompanha prazos e entregas e mantém riscos e decisões registrados.",
@@ -106,8 +106,8 @@ const raw = [
   },
   {
     slug: "negocios-requisitos",
-    nome: "Analista de Negócios / Requisitos",
-    nomeCurto: "Negócios e Requisitos",
+    nome: "Requisitos e regras de negócio",
+    nomeCurto: "Requisitos e regras",
     pitch: "Levanto, documento e rastreio requisitos e regras de negócio.",
     oQueFaz:
       "Conversa com quem usa o processo, descobre o que realmente precisa ser feito e escreve requisitos e regras que o time consegue construir e testar.",

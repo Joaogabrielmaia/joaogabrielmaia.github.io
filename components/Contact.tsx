@@ -78,7 +78,7 @@ export function Contact() {
         <SectionHeader
           badge="Contato"
           title="Vamos conversar?"
-          description="Se algum dos meus projetos ou experiências fizer sentido para o seu time, vamos conversar."
+          description="Quer ver algum projeto em detalhes ou trocar uma ideia sobre automação, IA ou software? Escreva uma mensagem e eu respondo por aqui."
           centered
         />
 

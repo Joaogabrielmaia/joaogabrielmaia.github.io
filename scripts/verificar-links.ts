@@ -13,7 +13,8 @@ for (const p of projects) {
 for (const c of certifications) if (c.urlCredencial) urls.add(c.urlCredencial);
 
 // LinkedIn bloqueia robôs (999/403): é conferido à mão e só avisado.
-const aviso = (u: string) => u.includes("linkedin.com");
+// Udemy bloqueia robôs (403) e o Coursera responde 200 a qualquer código: também são conferidos à mão.
+const aviso = (u: string) => /linkedin\.com|udemy\.com|coursera\.org/.test(u);
 
 async function checar(url: string) {
   for (const metodo of ["HEAD", "GET"] as const) {

@@ -32,8 +32,8 @@ export function ProjectsIndex({ projetos, areas }: { projetos: Project[]; areas:
 
   return (
     <div>
-      <div role="group" aria-label="Filtrar por área" className="flex flex-wrap gap-2">
-        {botao("todas", "Todas as áreas")}
+      <div role="group" aria-label="Filtrar por competência" className="flex flex-wrap gap-2">
+        {botao("todas", "Todas")}
         {areas.map((a) => botao(a.slug, a.nomeCurto))}
       </div>
       <p role="status" className="mt-4 text-sm text-neutral-700">
@@ -55,7 +55,7 @@ export function ProjectsIndex({ projetos, areas }: { projetos: Project[]; areas:
 
       {outros.length > 0 && (
         <>
-          <h2 className="mt-12 font-condensed uppercase text-4xl text-[#7a8c57]">Projetos anteriores e acadêmico</h2>
+          <h2 className="mt-12 font-condensed uppercase text-4xl text-[#7a8c57]">Projeto acadêmico</h2>
           <ul className="mt-5 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {outros.map((p) => <li key={p.slug}><ProjectCard projeto={p} /></li>)}
           </ul>

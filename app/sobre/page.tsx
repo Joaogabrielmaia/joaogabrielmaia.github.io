@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { profile } from "@/content";
+import { profile, roles } from "@/content";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description: "Quem sou, áreas de atuação, formato de trabalho, formação, idiomas e como trabalho com clientes.",
+  description: "Quem sou, competências, formação, idiomas e como trabalho.",
   alternates: { canonical: "/sobre" },
 };
 
@@ -25,7 +25,6 @@ export default function SobrePage() {
       <header className="border-y border-black/20 py-8">
         <h1 className="font-condensed uppercase font-normal text-6xl sm:text-8xl leading-[0.95] text-[#7a8c57]">Sobre</h1>
         <p className="mt-4 font-display text-xl font-bold text-neutral-800">{profile.nomeCompleto}</p>
-        <p className="text-sm text-neutral-600">{profile.cidade}</p>
       </header>
 
       <Bloco titulo="Quem sou">
@@ -35,15 +34,19 @@ export default function SobrePage() {
         </div>
       </Bloco>
 
-      <Bloco titulo="Áreas e formato de trabalho">
-        <dl className="glass-card space-y-4 p-6 text-sm">
-          <div><dt className="font-display font-bold text-[#5b6b3e]">Áreas em que atuei</dt><dd className="mt-1 text-neutral-800">{profile.busca.funcoes} <Link href="/#areas" className="font-bold underline underline-offset-2 hover:text-[#F29A0F]">Ver as áreas</Link>.</dd></div>
-          <div><dt className="font-display font-bold text-[#5b6b3e]">Contexto</dt><dd className="mt-1 text-neutral-800">{profile.busca.empresas}</dd></div>
-          <div><dt className="font-display font-bold text-[#5b6b3e]">Formato</dt><dd className="mt-1 text-neutral-800">{profile.busca.formato}</dd></div>
-        </dl>
+      <Bloco titulo="Competências">
+        <ul className="flex flex-wrap gap-2">
+          {roles.map((r) => (
+            <li key={r.slug}>
+              <Link href={`/areas/${r.slug}`} className="inline-flex rounded-full border border-[#7a8c57]/40 bg-[#7a8c57]/10 px-4 py-2 text-sm font-semibold text-[#34401f] hover:bg-[#7a8c57] hover:text-[#fbfcf3] transition-colors">
+                {r.nome}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Bloco>
 
-      <Bloco titulo="Como trabalho com clientes">
+      <Bloco titulo="Como trabalho">
         <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-neutral-800">
           {profile.comoTrabalho.map((c) => <li key={c}>{c}</li>)}
         </ul>

@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 const rotas = [
   "/", "/projetos", "/sobre",
-  "/projetos/trilha", "/projetos/ponte", "/projetos/erp-vortex", "/projetos/gerencieja",
+  "/projetos/trilha", "/projetos/ponte", "/projetos/erp-vortex",
   "/areas/implantacao", "/areas/sdr-bdr",
   "/experiencia/hotmart-suporte-ti", "/experiencia/desenvolvedor-full-stack-autonomo",
 ];
@@ -37,7 +37,7 @@ test.describe("fluxos principais", () => {
   test("filtro por área em /projetos", async ({ page }) => {
     await page.goto("/projetos");
     const total = await page.getByRole("status").innerText();
-    await page.getByRole("button", { name: "Customer Success" }).click();
+    await page.getByRole("button", { name: "Suporte e adoção" }).click();
     const filtrado = await page.getByRole("status").innerText();
     expect(filtrado).not.toBe(total);
     await expect(page.getByRole("link", { name: "Termômetro" }).first()).toBeVisible();
@@ -50,7 +50,7 @@ test.describe("fluxos principais", () => {
     await expect(botao).toHaveAttribute("aria-expanded", "false");
     await botao.click();
     await expect(botao).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText("Git e GitHub: repositório, commit e versões")).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Git e GitHub: repositório, commit e versões" })).toBeVisible();
 
     await page.goto("/#competencias");
     const b2 = page.getByRole("button", { name: "Ver todas as competências" });

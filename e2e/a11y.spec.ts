@@ -4,7 +4,7 @@ import AxeBuilder from "@axe-core/playwright";
 // Uma página de cada tipo + as principais.
 const paginas = [
   "/", "/projetos", "/sobre",
-  "/projetos/trilha", "/projetos/erp-vortex", "/projetos/gerencieja",
+  "/projetos/trilha", "/projetos/erp-vortex",
   "/areas/implantacao", "/experiencia/hotmart-suporte-ti",
 ];
 

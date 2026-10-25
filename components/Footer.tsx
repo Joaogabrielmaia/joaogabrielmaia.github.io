@@ -13,7 +13,6 @@ export function Footer() {
           <div className="md:col-span-6">
             <p className="font-condensed uppercase text-5xl leading-none">{profile.nome}</p>
             <p className="mt-3 max-w-md text-sm text-[#e6ebd2]">{profile.hero.subtitulo}</p>
-            <p className="mt-2 text-sm text-[#c9d2ac]">{profile.cidade}</p>
           </div>
 
           <nav aria-label="Rodapé" className="md:col-span-3">

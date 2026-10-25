@@ -3,31 +3,23 @@ import { ProfileSchema } from "./schema";
 export const profile = ProfileSchema.parse({
   nome: "João Gabriel Maia",
   nomeCompleto: "João Gabriel Maia da Costa",
-  cidade: "Betim, MG (região de Belo Horizonte)",
   email: "joaogabrielmaia092@gmail.com",
   linkedin: "https://www.linkedin.com/in/jo%C3%A3ogabrielmaia",
   github: "https://github.com/Joaogabrielmaia",
   site: "https://joaogabrielmaia.github.io",
   hero: {
     titulo: "João Gabriel Maia",
-    subtitulo: "Engenharia de Software · desenvolvimento, automação e atendimento a clientes",
+    subtitulo: "Software Engineer · Automação com IA · Gestão de projetos",
     frase:
-      "Desenvolvo sistemas e acompanho o cliente do discovery à entrega e à evolução.",
-    disponivel: "Betim, MG · remoto ou híbrido",
+      "Full stack com TypeScript, React, Next.js, Node.js e PostgreSQL. Construo automações, agentes de IA e integrações por API, com testes automatizados e decisões documentadas.",
+    selo: "Engenharia de Software · PUC Minas",
   },
-  provas: [
-    { valor: "7", rotulo: "projetos documentados de ponta a ponta" },
-    { valor: "~15", rotulo: "clientes atendidos desde abr/2026" },
-    { valor: "9", rotulo: "certificações" },
-    { valor: "1º", rotulo: "Melhor Trabalho Interdisciplinar, PUC Minas" },
+  pontos: [
+    { icone: "code", titulo: "Full stack", texto: "TypeScript, React, Next.js, Node.js, Express, PostgreSQL e Prisma." },
+    { icone: "bot", titulo: "Automação e IA", texto: "n8n, agentes de IA, RAG, integrações por API e webhooks." },
+    { icone: "teste", titulo: "Qualidade", texto: "Testes unitários, de integração e E2E, ADRs e rastreabilidade." },
+    { icone: "metodo", titulo: "Gestão e métodos", texto: "Scrum, Kanban e requisitos. Gestor do ERP Vortex, Melhor Trabalho Interdisciplinar da PUC Minas." },
   ],
-  busca: {
-    funcoes:
-      "Já atuei ou construí projetos em: implantação, automação (com ou sem IA), atendimento e sucesso do cliente, prospecção e consultoria de soluções.",
-    empresas:
-      "Equipe pequena, com contato direto com clientes.",
-    formato: "Localização: Betim, MG. Remoto ou híbrido (BH/Betim).",
-  },
   formacao: {
     curso: "Bacharelado em Engenharia de Software",
     instituicao: "PUC Minas",
@@ -35,13 +27,13 @@ export const profile = ProfileSchema.parse({
   },
   idiomas: ["Português nativo", "Inglês básico"],
   sobre: [
-    "Estudo Engenharia de Software na PUC Minas e, desde abril de 2026, trabalho como desenvolvedor full stack autônomo, junto de uma equipe pequena que assume projetos de clientes. Atuo entre o cliente e a equipe: levanto o que o cliente precisa, traduzo para o time e acompanho a entrega. Também desenvolvo.",
+    "Estudante de Engenharia de Software na PUC Minas (conclusão prevista para dez/2027) e desenvolvedor full stack desde abril de 2026. Trabalho com TypeScript, React, Next.js, Node.js e PostgreSQL, e construo automações, agentes de IA e integrações por API, com testes automatizados e decisões registradas em ADRs.",
     "Antes disso, fui aprendiz de suporte de TI na Hotmart, onde cuidei de chamados, rollouts de máquinas e de telefonia, salas de reunião e automações simples.",
   ],
   comoTrabalho: [
-    "Começo pelo discovery: entrevisto quem usa o processo, separo o que é regra do que é hábito e escrevo o que combinamos.",
-    "Explico os trade-offs ao cliente em linguagem simples (por exemplo, mais segurança pode deixar o carregamento um pouco mais lento) e deixo a decisão com ele.",
-    "Acompanho a entrega em sprints, mostro protótipos cedo e continuo por perto depois: manutenção e evolução fazem parte do trabalho.",
+    "Começo pelo levantamento de requisitos e regras de negócio e escrevo o que foi combinado.",
+    "Registro as decisões de arquitetura em ADRs, com as alternativas e o custo de cada uma.",
+    "Entrego em sprints, com testes automatizados e documentação, e continuo mantendo o que entrego.",
   ],
   destaqueAcademico:
     "Melhor Trabalho Interdisciplinar de Engenharia de Software (PUC Minas, 2025), com o ERP Vortex, em que fui gestor de um time de 8 pessoas.",
