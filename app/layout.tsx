@@ -15,19 +15,19 @@ const anton = Anton({ variable: "--font-condensed", subsets: ["latin"], weight: 
 const pinyon = Pinyon_Script({ variable: "--font-script", subsets: ["latin"], weight: "400", display: "swap" });
 
 const descricao =
-  "Engenharia de Software (PUC Minas) com foco em implantação, automação, customer success e consultoria de soluções. 7 projetos documentados de ponta a ponta, experiência com clientes e prêmio de Melhor Trabalho Interdisciplinar.";
+  "Engenharia de Software (PUC Minas). 7 projetos documentados de ponta a ponta, experiência com clientes e prêmio de Melhor Trabalho Interdisciplinar.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profile.site),
   title: {
-    default: "João Gabriel Maia | Implantação, automação e clientes",
+    default: "João Gabriel Maia | Engenharia de Software",
     template: "%s | João Gabriel Maia",
   },
   description: descricao,
   authors: [{ name: profile.nome }],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "João Gabriel Maia | Implantação, automação e clientes",
+    title: "João Gabriel Maia | Engenharia de Software",
     description: descricao,
     type: "website",
     locale: "pt_BR",

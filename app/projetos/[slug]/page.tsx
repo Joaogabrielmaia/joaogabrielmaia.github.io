@@ -54,7 +54,7 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
     ...(p.diagramas.length ? [{ id: "como-funciona", rotulo: "Como funciona" }] : []),
     ...(p.decisoes.length ? [{ id: "decisoes", rotulo: "Decisões e trade-offs" }] : []),
     ...(p.numeros.length || p.naoValidado.length ? [{ id: "qualidade", rotulo: "Qualidade" }] : []),
-    { id: "vagas", rotulo: "Como se aplica às vagas" },
+    { id: "areas-ligadas", rotulo: "Áreas ligadas ao projeto" },
     ...(p.roteiroLeitura.length ? [{ id: "leitura", rotulo: "Roteiro de leitura" }] : []),
   ];
 
@@ -69,7 +69,8 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
         {p.selo && <p className="mb-3 inline-block rounded-full bg-[#F29A0F] px-4 py-1.5 text-xs font-bold text-[#161616]">{p.selo}</p>}
         <h1 className="font-condensed uppercase font-normal text-6xl sm:text-8xl leading-[0.95] text-[#7a8c57]">{p.titulo}</h1>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-neutral-800">{p.frase}</p>
-        <div className="mt-5 flex flex-wrap gap-1.5">
+        <p className="mt-5 text-xs font-bold uppercase tracking-wider text-neutral-600">Áreas ligadas</p>
+        <div className="mt-2 flex flex-wrap gap-1.5">
           {p.areas.filter((a) => a.nivel === "principal").map((a) => (
             <Chip key={a.area} variant="area">{roleBySlug(a.area)?.nomeCurto}</Chip>
           ))}
@@ -120,7 +121,7 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
               {[
                 ["Problema", p.resumo30s.problema],
                 ["O que construí", p.resumo30s.construi],
-                ["Por que importa", p.resumo30s.importa],
+                ["O que mostra", p.resumo30s.importa],
               ].map(([t, d]) => (
                 <div key={t} className="glass-card p-5">
                   <dt className="font-display font-extrabold text-[#5b6b3e]">{t}</dt>
@@ -238,7 +239,7 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
             </Secao>
           )}
 
-          <Secao id="vagas" titulo="Como se aplica às vagas">
+          <Secao id="areas-ligadas" titulo="Áreas ligadas ao projeto">
             <ul className="space-y-3">
               {[...p.areas].sort((a, b) => (a.nivel === b.nivel ? 0 : a.nivel === "principal" ? -1 : 1)).map((a) => (
                 <li key={a.area} className="glass-card flex flex-col gap-1 p-4 text-sm sm:flex-row sm:items-start sm:gap-4">
@@ -246,7 +247,7 @@ export default async function ProjetoPage({ params }: { params: Promise<{ slug: 
                     <Link href={`/areas/${a.area}`} className="font-display font-extrabold text-[#161616] hover:text-[#F29A0F] underline-offset-2 hover:underline">
                       {roleBySlug(a.area)?.nome}
                     </Link>
-                    <p className="mt-1"><Chip variant={a.nivel === "principal" ? "area" : "area-rel"}>{a.nivel === "principal" ? "Principal" : "Relacionado"}</Chip></p>
+                    <p className="mt-1"><Chip variant={a.nivel === "principal" ? "area" : "area-rel"}>{a.nivel === "principal" ? "Mais ligado" : "Também ligado"}</Chip></p>
                   </div>
                   <p className="text-neutral-700">{a.evidencia}</p>
                 </li>

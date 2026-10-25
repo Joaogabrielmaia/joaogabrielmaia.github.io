@@ -7,7 +7,7 @@ export function AboutSummary() {
   return (
     <section id="sobre" aria-labelledby="sobre-titulo" className="py-20 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader titleId="sobre-titulo" badge="Sobre" title="Quem sou e o que busco" />
+        <SectionHeader titleId="sobre-titulo" badge="Sobre" title="Quem sou" />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="glass-card p-7">
             <p className="text-base leading-relaxed text-neutral-800">{profile.sobre[0]}</p>
@@ -21,11 +21,11 @@ export function AboutSummary() {
           </div>
           <dl className="glass-card space-y-4 p-7 text-sm">
             <div>
-              <dt className="font-display font-bold text-[#5b6b3e]">Funções</dt>
+              <dt className="font-display font-bold text-[#5b6b3e]">Áreas de atuação</dt>
               <dd className="mt-1 text-neutral-700">{profile.busca.funcoes}</dd>
             </div>
             <div>
-              <dt className="font-display font-bold text-[#5b6b3e]">Formato</dt>
+              <dt className="font-display font-bold text-[#5b6b3e]">Formato de trabalho</dt>
               <dd className="mt-1 text-neutral-700">{profile.busca.formato}</dd>
             </div>
           </dl>

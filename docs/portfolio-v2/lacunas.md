@@ -8,7 +8,7 @@ Tudo o que ficou de fora, foi cortado ou precisa de decisão do João. Nada diss
 3. **Legendas dos prints.** As 5 legendas de destaque por projeto foram escritas a partir das galerias dos repositórios (quando existiam) e da base. Os demais prints usam o título derivado do nome do arquivo. Revisar.
 4. **"~15 clientes atendidos"** na faixa de provas do hero é uma estimativa da própria base ("sem controle exato"). Mantive o "~". Confirmar se quer exibir.
 5. **"1º"** no cartão do prêmio é só um destaque gráfico para "Melhor Trabalho Interdisciplinar". Trocar se preferir outro símbolo.
-6. **Mostrar ou não** a preferência por PJ e "atuação autônoma" como cargo: usei "remoto ou híbrido (BH/Betim), PJ ou CLT" e mantive o cargo (como já estava no portfólio).
+6. **Tom neutro (cardápio):** o site não declara mais o que o João procura nem PJ/CLT; mostra áreas de atuação e "Betim, MG · remoto ou híbrido". Combinar PJ/CLT na conversa. O cargo "atuação autônoma" foi mantido.
 7. **Recomendação no LinkedIn** do cliente do e-commerce (pendência da base).
 
 ## Links e credenciais

@@ -78,7 +78,7 @@ export function Contact() {
         <SectionHeader
           badge="Contato"
           title="Vamos conversar?"
-          description="Procuro meu primeiro emprego formal em implantação, automação, customer success ou consultoria de soluções. Remoto ou híbrido (BH/Betim), PJ ou CLT."
+          description="Se algum dos meus projetos ou experiências fizer sentido para o seu time, vamos conversar."
           centered
         />
 
