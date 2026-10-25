@@ -63,7 +63,7 @@ export function Contact() {
         setStatus("error");
         setErrorMessage("Erro ao enviar mensagem via FormSubmit. Tente novamente.");
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("FormSubmit fetch error:", err);
       setStatus("error");
       setErrorMessage("Ocorreu um erro ao enviar a mensagem. Verifique sua conexão e tente novamente.");
@@ -78,7 +78,7 @@ export function Contact() {
         <SectionHeader
           badge="Contato"
           title="Vamos conversar?"
-          description="Estou aberto a oportunidades em Engenharia de Software, Desenvolvimento Full Stack e projetos com Inteligência Artificial."
+          description="Procuro meu primeiro emprego formal em implantação, automação, customer success ou consultoria de soluções. Remoto ou híbrido (BH/Betim), PJ ou CLT."
           centered
         />
 
@@ -100,7 +100,7 @@ export function Contact() {
 
               <div className="space-y-4 pt-2">
                 <a
-                  href="mailto:Joaogabrielmaia092@gmail.com"
+                  href="mailto:joaogabrielmaia092@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
                   <div className="p-3 rounded-xl bg-[#0F0F10] text-[#F29A0F] shrink-0">
@@ -109,13 +109,13 @@ export function Contact() {
                   <div className="overflow-hidden">
                     <span className="text-xs font-mono text-neutral-400 block">E-mail Direto</span>
                     <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black truncate block">
-                      Joaogabrielmaia092@gmail.com
+                      joaogabrielmaia092@gmail.com
                     </span>
                   </div>
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/joãogabrielmaia"
+                  href="https://www.linkedin.com/in/jo%C3%A3ogabrielmaia"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
@@ -126,7 +126,7 @@ export function Contact() {
                   <div>
                     <span className="text-xs font-mono text-neutral-400 block">LinkedIn</span>
                     <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black">
-                      linkedin.com/in/joãogabrielmaia
+                      linkedin.com/in/jo%C3%A3ogabrielmaia
                     </span>
                   </div>
                 </a>

@@ -1,31 +1,38 @@
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { About } from "@/components/About";
-import { Journey } from "@/components/Journey";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
-import { Experience } from "@/components/Experience";
-import { Certifications } from "@/components/Certifications";
+import { RolesSection } from "@/components/home/RolesSection";
+import { FeaturedProjects } from "@/components/home/FeaturedProjects";
+import { ExperienceTimeline } from "@/components/home/ExperienceTimeline";
+import { AboutSummary } from "@/components/home/AboutSummary";
+import { SkillsSection } from "@/components/home/SkillsSection";
+import { CertificationsSection } from "@/components/home/CertificationsSection";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { ParticleWaveCanvas } from "@/components/ui/ParticleWaveCanvas";
+import { profile } from "@/content";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.nomeCompleto,
+  alternateName: profile.nome,
+  url: profile.site,
+  email: profile.email,
+  jobTitle: "Estudante de Engenharia de Software",
+  alumniOf: { "@type": "CollegeOrUniversity", name: profile.formacao.instituicao },
+  address: { "@type": "PostalAddress", addressLocality: "Betim", addressRegion: "MG", addressCountry: "BR" },
+  sameAs: [profile.linkedin, profile.github],
+};
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col selection:bg-[#5ed29c] selection:text-[#070b0a] relative">
-      {/* Background Animated Particle Wave Grid */}
-      <ParticleWaveCanvas />
-
-      <Navbar />
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero />
-      <About />
-      <Journey />
-      <Projects />
-      <Skills />
-      <Experience />
-      <Certifications />
+      <RolesSection />
+      <FeaturedProjects />
+      <ExperienceTimeline />
+      <AboutSummary />
+      <SkillsSection />
+      <CertificationsSection />
       <Contact />
-      <Footer />
-    </main>
+    </>
   );
 }

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowPill } from "./Decor";
 
 interface SectionHeaderProps {
@@ -8,6 +5,7 @@ interface SectionHeaderProps {
   title: string;
   description?: string;
   centered?: boolean;
+  titleId?: string;
 }
 
 // Palavra em script laranja que "assina" o título de cada seção
@@ -19,6 +17,8 @@ const scriptWords: Record<string, string> = {
   Experiência: "path",
   Certificações: "proof",
   Contato: "hello",
+  "Áreas": "fit",
+  Perfil: "me",
 };
 
 export function SectionHeader({
@@ -26,15 +26,12 @@ export function SectionHeader({
   title,
   description,
   centered = false,
+  titleId,
 }: SectionHeaderProps) {
   const script = scriptWords[badge] ?? badge.toLowerCase();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    <div
       className={`mb-12 ${centered ? "text-center max-w-3xl mx-auto" : ""}`}
     >
       {/* Faixa entre duas linhas, como no cabeçalho do modelo */}
@@ -53,7 +50,7 @@ export function SectionHeader({
         >
           {script}
         </span>
-        <h2 className="relative max-w-5xl font-condensed uppercase font-normal text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-tight text-[#7a8c57]">
+        <h2 id={titleId} className="relative max-w-5xl font-condensed uppercase font-normal text-5xl sm:text-7xl md:text-8xl leading-[0.95] tracking-tight text-[#7a8c57]">
           {title}
         </h2>
       </div>
@@ -65,6 +62,6 @@ export function SectionHeader({
           {description}
         </p>
       )}
-    </motion.div>
+    </div>
   );
 }

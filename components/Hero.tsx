@@ -1,201 +1,113 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail, Sparkle } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { ArrowPill, MonogramBadge } from "./ui/Decor";
-import { GithubIcon, LinkedinIcon } from "./ui/Icons";
-
-const stack = ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "IA"];
-
-/** Cartão branco de cantos largos com linha-régua e brilhos, como no modelo */
-function Frame({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-[2.25rem] bg-[#f8f8f7] p-5 shadow-[0_22px_30px_-20px_rgba(0,0,0,0.55),inset_0_1px_0_#fff] ${className}`}
-    >
-      <div className="rule-dots mb-4 opacity-80" />
-      <Sparkle className="absolute right-5 top-14 w-4 h-4 text-neutral-400" />
-      {children}
-      <div className="wave-bars pointer-events-none absolute inset-x-0 bottom-0 h-14" />
-    </div>
-  );
-}
+import { profile } from "@/content";
 
 export function Hero() {
   return (
-    <section className="relative pt-28 sm:pt-32 pb-20 overflow-hidden">
+    <section aria-labelledby="titulo-hero" className="relative pt-28 sm:pt-32 pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Faixa superior */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="flex items-center justify-between border-y border-black/20 py-2.5 font-display text-lg sm:text-3xl text-neutral-500"
+        <div className="flex items-center justify-between border-y border-black/20 py-2.5 font-display text-lg sm:text-3xl text-neutral-500"
         >
           <span>
             <b className="font-bold">Built</b> to Inspire
           </span>
           <b className="hidden sm:inline font-bold">2026</b>
           <ArrowPill />
-        </motion.div>
+        </div>
 
         {/* Título gigante gravado + script laranja */}
         <div className="relative mt-16 sm:mt-24">
           <motion.span
-            initial={{ opacity: 0, x: -30, rotate: -10 }}
-            animate={{ opacity: 1, x: 0, rotate: -6 }}
+            aria-hidden
+            initial={{ x: -30, rotate: -10 }}
+            animate={{ x: 0, rotate: -6 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="font-script absolute -top-10 sm:-top-20 left-0 z-10 text-5xl sm:text-8xl text-[#F29A0F] pointer-events-none select-none"
           >
-            software engineer
+            clientes & automação
           </motion.span>
 
-          <div className="absolute right-0 -top-2 sm:top-0 flex flex-col items-end gap-3">
-            <MonogramBadge size={56} className="hidden sm:inline-flex" />
-            <span className="font-display font-bold text-xs sm:text-xl text-[#7a8c57] tracking-wide text-right leading-tight">
-              FULL STACK
-              <br />· AI ·
-            </span>
+          <div className="absolute right-0 -top-2 sm:top-0 hidden sm:flex flex-col items-end gap-3">
+            <MonogramBadge size={56} />
           </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          <h1
+            id="titulo-hero"
             className="deboss font-display font-extrabold uppercase leading-[0.86] tracking-[-0.04em] text-[17vw] sm:text-[15vw] lg:text-[13.5rem]"
           >
-            João
-            <br />
-            Maia
-          </motion.h1>
+            <span aria-hidden>
+              João
+              <br />
+              Maia
+            </span>
+            <span className="sr-only">{profile.hero.titulo}</span>
+          </h1>
         </div>
 
-        {/* Placa com três cartões */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="slab mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5"
+        {/* Subtítulo, frase de valor e ações */}
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end"
         >
-          {/* Cartão 1: foto em moldura cortada */}
-          <Frame className="relative z-10 min-h-[22rem]">
-            <div className="flex gap-4">
-              <div className="relative w-[46%] aspect-[3/4] shrink-0">
-                <div className="absolute inset-0 bg-[#F29A0F]/70 [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]" />
-                <div className="absolute inset-[2px] overflow-hidden [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]">
-                  <Image
-                    src="/avatar.jpg"
-                    alt="João Gabriel Maia"
-                    fill
-                    priority
-                    className="object-cover object-center"
-                  />
-                </div>
-              </div>
-              <div className="flex min-w-0 flex-col justify-center">
-                <span className="font-display text-xs text-neutral-500">
-                  PUC Minas
-                </span>
-                <h3 className="font-display font-extrabold text-xl leading-[1.05] text-[#F29A0F]">
-                  Engenharia
-                  <br />
-                  <span className="text-[#161616]">de Software</span>
-                </h3>
-                <p className="mt-2 text-[11px] leading-snug text-neutral-600">
-                  APIs, dados e Inteligência Artificial.
-                </p>
-              </div>
-            </div>
-            <div className="mt-5 flex gap-2">
-              <a
-                href="#projetos"
-                className="rounded-sm bg-[#3b8be8] px-3 py-1.5 text-[11px] font-semibold text-white"
+          <div>
+            <p className="font-display text-xl sm:text-2xl font-bold text-[#5b6b3e]">{profile.hero.subtitulo}</p>
+            <p className="mt-3 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-700">{profile.hero.frase}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <Link
+                href="/projetos"
+                className="group inline-flex items-center gap-2 rounded-sm bg-[#F29A0F] px-6 py-3 text-sm font-bold text-[#161616] hover:bg-[#d98200] transition-colors"
               >
                 Ver projetos
-              </a>
-              <a
-                href="#sobre"
-                className="rounded-sm border border-neutral-500 px-3 py-1.5 text-[11px] font-semibold text-neutral-700"
-              >
-                Sobre
-              </a>
-            </div>
-          </Frame>
-
-          {/* Cartão 2: stack */}
-          <Frame className="relative z-10 min-h-[22rem] text-center">
-            <h3 className="font-display font-extrabold text-3xl leading-[1.05] text-[#F29A0F]">
-              Full Stack
-              <br />
-              <span className="text-[#161616]">Developer</span>
-            </h3>
-            <p className="mx-auto mt-3 max-w-[16rem] text-[11px] leading-snug text-neutral-600">
-              Aplicações web de ponta a ponta, do banco de dados à interface,
-              com requisitos e negócio como diferencial.
-            </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              {stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded-md bg-[#F29A0F] px-2.5 py-1 text-[11px] font-bold text-[#161616]"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </Frame>
-
-          {/* Cartão 3: contatos */}
-          <Frame className="relative z-10 min-h-[22rem] text-center">
-            <h3 className="font-display font-extrabold text-3xl leading-[1.05] text-[#F29A0F]">
-              Vamos conversar
-              <br />
-              <span className="text-[#161616]">sobre ideias?</span>
-            </h3>
-            <div className="mt-6 flex flex-col items-center gap-3">
-              <a
-                href="#contato"
-                className="group inline-flex items-center gap-2 rounded-sm bg-[#F29A0F] px-5 py-2.5 text-xs font-bold text-[#161616] hover:bg-[#d98200] transition-colors"
-              >
-                Falar comigo
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden />
+              </Link>
               <a
                 href="/cv.pdf"
                 download="Joao_Gabriel_CV.pdf"
-                className="inline-flex items-center gap-2 rounded-sm border border-neutral-500 px-4 py-2 text-xs font-semibold text-neutral-700 hover:border-[#F29A0F] transition-colors"
+                className="inline-flex items-center gap-2 rounded-sm border-2 border-[#7a8c57] px-5 py-[10px] text-sm font-bold text-[#5b6b3e] hover:bg-[#5b6b3e] hover:text-[#fbfcf3] transition-colors"
               >
-                <Download className="w-3.5 h-3.5" />
+                <Download className="w-4 h-4" aria-hidden />
                 Baixar CV
               </a>
-              <div className="flex items-center gap-2 pt-1">
-                {[
-                  { href: "https://www.linkedin.com/in/joãogabrielmaia", label: "LinkedIn", Icon: LinkedinIcon },
-                  { href: "https://github.com/Joaogabrielmaia", label: "GitHub", Icon: GithubIcon },
-                  { href: "mailto:Joaogabrielmaia092@gmail.com", label: "Email", Icon: Mail },
-                ].map(({ href, label, Icon }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target={href.startsWith("http") ? "_blank" : undefined}
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="rounded-full border border-neutral-400 p-2.5 text-neutral-700 hover:bg-[#F29A0F] hover:border-[#F29A0F] transition-colors"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                ))}
+            </div>
+          </div>
+          <p className="inline-flex items-center gap-2 self-start rounded-full bg-white/70 px-4 py-2 text-sm font-semibold text-[#4b5a30] lg:justify-self-end">
+            <span className="relative flex h-2.5 w-2.5" aria-hidden>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#7a8c57] opacity-60" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#7a8c57]" />
+            </span>
+            {profile.hero.disponivel}
+          </p>
+        </div>
+
+        {/* Placa: foto + faixa de provas */}
+        <div className="slab mt-12 grid grid-cols-1 items-stretch gap-5 lg:grid-cols-[minmax(0,22rem)_1fr]"
+        >
+          <div className="glass-card relative z-10 flex gap-4 p-5">
+            <div className="relative aspect-[3/4] w-32 shrink-0">
+              <div className="absolute inset-0 bg-[#F29A0F]/70 [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]" />
+              <div className="absolute inset-[2px] overflow-hidden [clip-path:polygon(0_0,82%_0,100%_14%,100%_100%,0_100%)]">
+                <Image src="/avatar.jpg" alt="João Gabriel Maia" fill priority sizes="200px" className="object-cover" />
               </div>
             </div>
-          </Frame>
-        </motion.div>
+            <div className="flex flex-col justify-center">
+              <p className="font-display text-xs text-neutral-500">{profile.formacao.instituicao}</p>
+              <p className="font-display font-extrabold leading-tight text-[#161616]">Engenharia de Software</p>
+            </div>
+          </div>
+
+          <ul className="relative z-10 grid grid-cols-2 gap-5 sm:grid-cols-4">
+            {profile.provas.map((prova) => (
+              <li key={prova.rotulo} className="glass-card flex flex-col justify-center gap-3 p-5">
+                <span className="font-condensed text-6xl leading-none text-[#7a8c57]">{prova.valor}</span>
+                <p className="text-sm leading-snug text-neutral-700">{prova.rotulo}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

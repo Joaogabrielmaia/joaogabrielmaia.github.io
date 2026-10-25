@@ -45,7 +45,7 @@ export function ParticleWaveCanvas() {
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.min(110, Math.floor((width * height) / 14000));
+      const count = Math.min(70, Math.floor((width * height) / 18000));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * width,
         y: Math.random() * height,
