@@ -126,7 +126,7 @@ export function Contact() {
                   <div>
                     <span className="text-xs font-mono text-neutral-400 block">LinkedIn</span>
                     <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black">
-                      linkedin.com/in/jo%C3%A3ogabrielmaia
+                      linkedin.com/in/joãogabrielmaia
                     </span>
                   </div>
                 </a>
