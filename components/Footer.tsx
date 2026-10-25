@@ -1,102 +1,68 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./ui/Icons";
+import { profile } from "@/content";
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer className="bg-[#0F0F10] text-[#FAFAFA] pt-16 pb-12 border-t border-neutral-800 relative z-10">
+    <footer className="relative z-10 mt-12 rounded-t-[3rem] bg-[#4f5c35] pt-16 pb-10 text-[#f3f3e8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-neutral-800">
-          
-          {/* Column 1: Brand & Tagline */}
-          <div className="md:col-span-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#B8FF2C] text-[#0F0F10] font-extrabold flex items-center justify-center text-sm tracking-wider">
-                JG
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white tracking-tight">
-                  João Gabriel Maia da Costa
-                </h3>
-                <p className="text-xs text-[#B8FF2C] font-mono font-medium">
-                  Software Engineer
-                </p>
-              </div>
-            </div>
-
-            <p className="text-xs text-neutral-400 leading-relaxed max-w-md font-normal">
-              Desenvolvimento de aplicações web Full Stack, arquitetura de sistemas e Inteligência Artificial para a construção de soluções escaláveis.
-            </p>
+        <div className="grid grid-cols-1 gap-10 border-b border-white/15 pb-10 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <p className="font-condensed uppercase text-5xl leading-none">{profile.nome}</p>
+            <p className="mt-3 max-w-md text-sm text-[#e6ebd2]">{profile.hero.subtitulo}</p>
+            <p className="mt-2 text-sm text-[#c9d2ac]">{profile.cidade}</p>
           </div>
 
-          {/* Column 2: Pillars */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
-              Áreas de Atuação
-            </h4>
-            <ul className="space-y-2 text-xs text-neutral-300 font-medium">
-              <li>Software Engineering</li>
-              <li>Full Stack Web Development</li>
-              <li>Artificial Intelligence & Automation</li>
-              <li>Requisitos & Metodologias Ágeis</li>
+          <nav aria-label="Rodapé" className="md:col-span-3">
+            <p className="font-display font-bold mb-3">Navegar</p>
+            <ul className="space-y-2 text-sm text-[#e6ebd2]">
+              {[
+                ["Áreas", "/#areas"],
+                ["Projetos", "/projetos"],
+                ["Experiência", "/#experiencia"],
+                ["Sobre", "/sobre"],
+                ["Contato", "/#contato"],
+              ].map(([n, h]) => (
+                <li key={n}>
+                  <Link href={h} className="hover:text-[#F29A0F] hover:underline underline-offset-2">{n}</Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Column 3: Quick Links */}
-          <div className="md:col-span-3 space-y-3">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400">
-              Redes & Contato
-            </h4>
-            <div className="flex items-center gap-3">
-              <a
-                href="https://github.com/Joaogabrielmaia"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="p-2.5 rounded-xl bg-neutral-900 text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-800 transition-colors"
-              >
-                <GithubIcon className="w-4 h-4" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/joãogabrielmaia"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="p-2.5 rounded-xl bg-neutral-900 text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-800 transition-colors"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </a>
-
-              <a
-                href="mailto:Joaogabrielmaia092@gmail.com"
-                aria-label="Email"
-                className="p-2.5 rounded-xl bg-neutral-900 text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-800 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
+          <div className="md:col-span-3">
+            <p className="font-display font-bold mb-3">Contato</p>
+            <div className="flex gap-2">
+              {[
+                { href: profile.linkedin, label: "LinkedIn", Icon: LinkedinIcon },
+                { href: profile.github, label: "GitHub", Icon: GithubIcon },
+                { href: `mailto:${profile.email}`, label: "E-mail", Icon: Mail },
+              ].map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/30 p-2.5 hover:bg-[#F29A0F] hover:border-[#F29A0F] hover:text-[#161616] transition-colors"
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
-
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-neutral-400 font-mono">
-            © {new Date().getFullYear()} João Gabriel Maia da Costa. Todos os direitos reservados.
-          </p>
-
+        <div className="flex flex-col items-start justify-between gap-4 pt-6 text-xs text-[#c9d2ac] sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} {profile.nomeCompleto}</p>
           <button
-            onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-neutral-900 text-xs text-neutral-300 hover:text-white hover:bg-neutral-800 border border-neutral-800 transition-colors cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 hover:border-[#F29A0F] hover:text-white"
           >
-            <span>Voltar ao topo</span>
-            <ArrowUp className="w-3.5 h-3.5 text-[#B8FF2C]" />
+            Voltar ao topo <ArrowUp className="h-3.5 w-3.5" aria-hidden />
           </button>
         </div>
       </div>

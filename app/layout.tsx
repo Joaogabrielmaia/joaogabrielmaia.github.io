@@ -1,70 +1,63 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Syne, Pinyon_Script, Anton } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { MotionProvider } from "@/components/ui/MotionProvider";
+import { NavTracker } from "@/components/ui/NavTracker";
+import { ParticleWaveCanvas } from "@/components/ui/ParticleWaveCanvas";
+import { profile } from "@/content";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"], display: "swap" });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"], display: "swap" });
+const syne = Syne({ variable: "--font-display", subsets: ["latin"], weight: ["500", "700", "800"], display: "swap" });
+const anton = Anton({ variable: "--font-condensed", subsets: ["latin"], weight: "400", display: "swap" });
+const pinyon = Pinyon_Script({ variable: "--font-script", subsets: ["latin"], weight: "400", display: "swap" });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
+const descricao =
+  "Engenharia de Software (PUC Minas). 7 projetos documentados de ponta a ponta, experiência com clientes e prêmio de Melhor Trabalho Interdisciplinar.";
 
 export const metadata: Metadata = {
-  title: "João Gabriel Maia | Software Engineer • Full Stack Developer • AI",
-  description:
-    "Portfólio profissional de João Gabriel Maia. Graduando em Engenharia de Software pela PUC Minas, atuando no desenvolvimento de aplicações web Full Stack, APIs, banco de dados e Inteligência Artificial.",
-  keywords: [
-    "João Gabriel Maia",
-    "Software Engineer",
-    "Full Stack Developer",
-    "Software Development",
-    "Web Development",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Express",
-    "PostgreSQL",
-    "SQL",
-    "Prisma",
-    "REST API",
-    "Git",
-    "GitHub",
-    "Artificial Intelligence",
-    "Generative AI",
-    "Automation",
-    "Agile",
-    "Scrum",
-    "PUC Minas",
-  ],
-  authors: [{ name: "João Gabriel Maia" }],
+  metadataBase: new URL(profile.site),
+  title: {
+    default: "João Gabriel Maia | Engenharia de Software",
+    template: "%s | João Gabriel Maia",
+  },
+  description: descricao,
+  authors: [{ name: profile.nome }],
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "João Gabriel Maia | Software Engineer • Full Stack Developer • AI",
-    description:
-      "Graduando em Engenharia de Software pela PUC Minas, desenvolvendo aplicações web Full Stack com React, Next.js, Node.js, PostgreSQL e Inteligência Artificial.",
+    title: "João Gabriel Maia | Engenharia de Software",
+    description: descricao,
     type: "website",
     locale: "pt_BR",
+    siteName: "João Gabriel Maia",
   },
+  twitter: { card: "summary_large_image" },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased selection:bg-[#B8FF2C] selection:text-[#0F0F10]`}
+      className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} ${pinyon.variable} ${anton.variable} h-full antialiased selection:bg-[#F29A0F] selection:text-[#161616]`}
     >
-      <body className="min-h-full bg-[#FAFAFA] text-[#0F0F10] bg-grid-pattern relative overflow-x-hidden font-sans">
-        {children}
+      <body className="min-h-full text-[#161616] relative overflow-x-hidden font-sans flex flex-col">
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[#161616] focus:px-4 focus:py-2 focus:text-white"
+        >
+          Pular para o conteúdo
+        </a>
+        <MotionProvider>
+          <NavTracker />
+          <ParticleWaveCanvas />
+          <Navbar />
+          <main id="conteudo" className="relative flex-1">
+            {children}
+          </main>
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

@@ -1,48 +1,33 @@
-# João Gabriel Maia — Portfólio Profissional
+# Portfólio de João Gabriel Maia
 
-Portfólio profissional de **João Gabriel Maia**, graduando em Engenharia de Software pela PUC Minas com foco em **Gestão de Produtos, Gestão de Projetos e Inteligência Artificial**.
+Site estático (Next.js 16, React 19, Tailwind 4) publicado no GitHub Pages em https://joaogabrielmaia.github.io. A publicação é automática a cada push na `main` (`.github/workflows/deploy.yml`).
 
-🌐 **URL Oficial**: [https://joaogabrielmaia.github.io](https://joaogabrielmaia.github.io)
+## Estrutura
+- `/` home com resumos · `/projetos` e `/projetos/[slug]` · `/experiencia/[slug]` · `/areas/[slug]` · `/sobre`
+- `content/`: **todo o conteúdo**, tipado e validado com Zod no build (o build falha se faltar um campo obrigatório)
+  - `profile.ts`, `roles.ts` (8 áreas), `experiences/`, `skills.ts` (competências e certificações), `projects/` (um arquivo por projeto)
+- `components/`, `app/`: interface e rotas
+- `public/projects/<slug>/`: prints em WebP (e `thumbs/`), `diagrams/` em SVG
+- `docs/fonte/`: base de dados (fonte única de conteúdo) · `docs/portfolio-v2/`: diagnóstico, decisões, lacunas, qualidade e prints antes/depois
 
----
+## Como rodar
+```bash
+npm ci
+npm run dev        # http://localhost:3000
+npm run build      # gera ./out (exportação estática)
+npm test           # testes de conteúdo e regras de integridade (Vitest)
+npm run servir     # serve ./out em http://localhost:4173
+npm run e2e        # Playwright (usa o Chrome instalado) + axe; rode `npm run build` antes
+npm run verificar:links
+npm run verificar:numeros -- <pasta com os clones dos repositórios>
+```
 
-## 🛠️ Tecnologias Utilizadas
+## Como adicionar um projeto
+1. Copie `content/projects/trilha.ts` para `content/projects/<slug>.ts` e preencha os campos (o schema em `content/schema.ts` aponta o que falta).
+2. Registre o projeto em `content/index.ts`.
+3. Prints: clone o repositório do projeto, inclua-o no mapa de `scripts/preparar-imagens.mjs` e rode `npm run preparar:imagens -- <pasta dos clones>`; diagramas em SVG vão em `public/projects/<slug>/diagrams/`.
+4. Números de teste: use o campo `confere` (trecho que deve existir no README do repositório) e rode `npm run verificar:numeros`.
+5. `npm test && npm run build`.
 
-- **Framework**: Next.js 16 (App Router + Turbopack)
-- **UI & Estilização**: React 19, Tailwind CSS v4, Framer Motion
-- **Ícones & Design**: Lucide React, Glassmorphism, Design System responsivo
-- **Formulário de Contato**: FormSubmit (envio assíncrono direto sem backend)
-- **Deploy & CI/CD**: GitHub Pages + GitHub Actions (`output: 'export'`)
-
----
-
-## 🚀 Desenvolvimento Local
-
-1. Instalar as dependências:
-   ```bash
-   npm install
-   ```
-
-2. Executar o servidor de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
-
-3. Acesse [http://localhost:3000](http://localhost:3000) no seu navegador.
-
----
-
-## ⚙️ Deploy Automático no GitHub Pages
-
-Este repositório está totalmente configurado para publicação automática no **GitHub Pages** via **GitHub Actions**.
-
-Sempre que houver um `git push` na branch `main`, a Action `.github/workflows/deploy.yml` executará automaticamente:
-1. Instalação limpa das dependências (`npm ci`)
-2. Compilação estática (`npm run build` -> pasta `out/`)
-3. Publicação direta no domínio `https://joaogabrielmaia.github.io`
-
-### Ativação Única no Repositório do GitHub:
-No seu repositório do GitHub:
-- Vá em **Settings** > **Pages**
-- Em **Source**, selecione **GitHub Actions**
-- Faça o `git push` e o site estará no ar em poucos segundos!
+## Regras de conteúdo (resumo)
+Empresas, pessoas e dados dos 7 projetos novos são **fictícios** e isso aparece em cada página ("Sobre este cenário"). Nada de cliente real, produção ou resultado medido nesses projetos; ganhos são estimativas rotuladas. Casos reais sem nome de cliente. Detalhes em `docs/fonte/base-de-dados-joao-gabriel.md`.

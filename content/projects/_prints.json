@@ -1,0 +1,486 @@
+{
+ "trilha": [
+  {
+   "arquivo": "01-login",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "02-painel",
+   "largura": 1280,
+   "altura": 1613
+  },
+  {
+   "arquivo": "03-minhas-pendencias",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "04-nova-implantacao",
+   "largura": 1280,
+   "altura": 1108
+  },
+  {
+   "arquivo": "05-detalhe-implantacao",
+   "largura": 1280,
+   "altura": 2933
+  },
+  {
+   "arquivo": "06-historico",
+   "largura": 1280,
+   "altura": 849
+  },
+  {
+   "arquivo": "07-modelo",
+   "largura": 1280,
+   "altura": 3407
+  },
+  {
+   "arquivo": "08-clientes",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "09-portal-cliente",
+   "largura": 1280,
+   "altura": 811
+  },
+  {
+   "arquivo": "10-portal-cliente-mobile",
+   "largura": 780,
+   "altura": 1902
+  },
+  {
+   "arquivo": "11-painel-mobile",
+   "largura": 780,
+   "altura": 4110
+  },
+  {
+   "arquivo": "12-lista-implantacoes",
+   "largura": 1280,
+   "altura": 1352
+  },
+  {
+   "arquivo": "13-usuarios",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "14-configuracoes",
+   "largura": 1280,
+   "altura": 800
+  }
+ ],
+ "pulso": [
+  {
+   "arquivo": "01-login",
+   "largura": 1280,
+   "altura": 809
+  },
+  {
+   "arquivo": "02-hoje",
+   "largura": 1280,
+   "altura": 809
+  },
+  {
+   "arquivo": "03-funil",
+   "largura": 1280,
+   "altura": 524
+  },
+  {
+   "arquivo": "04-lead",
+   "largura": 1280,
+   "altura": 1107
+  },
+  {
+   "arquivo": "05-painel",
+   "largura": 1280,
+   "altura": 843
+  },
+  {
+   "arquivo": "06-regras",
+   "largura": 1280,
+   "altura": 1456
+  },
+  {
+   "arquivo": "07-modelos",
+   "largura": 1280,
+   "altura": 2370
+  },
+  {
+   "arquivo": "08-automacao",
+   "largura": 1280,
+   "altura": 809
+  },
+  {
+   "arquivo": "09-simulador",
+   "largura": 1280,
+   "altura": 809
+  },
+  {
+   "arquivo": "10-configuracoes",
+   "largura": 1280,
+   "altura": 1559
+  },
+  {
+   "arquivo": "11-importar-csv",
+   "largura": 1280,
+   "altura": 809
+  }
+ ],
+ "prumo": [
+  {
+   "arquivo": "01-chat-resposta-com-fontes",
+   "largura": 1100,
+   "altura": 760
+  },
+  {
+   "arquivo": "02-recusa-honesta",
+   "largura": 1100,
+   "altura": 760
+  },
+  {
+   "arquivo": "03-escalonamento-para-humano",
+   "largura": 1100,
+   "altura": 760
+  },
+  {
+   "arquivo": "04-fila-do-atendente",
+   "largura": 1280,
+   "altura": 1490
+  },
+  {
+   "arquivo": "05-detalhe-do-chamado-com-resumo",
+   "largura": 1280,
+   "altura": 881
+  },
+  {
+   "arquivo": "06-avaliacao-da-resposta-do-agente",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "07-painel",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "08-lacunas-da-base",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "09-injecao-de-prompt-bloqueada",
+   "largura": 1100,
+   "altura": 760
+  },
+  {
+   "arquivo": "10-relatorio-de-avaliacao",
+   "largura": 1280,
+   "altura": 1219
+  },
+  {
+   "arquivo": "11-versao-mobile-chat",
+   "largura": 780,
+   "altura": 1560
+  },
+  {
+   "arquivo": "12-base-de-conhecimento",
+   "largura": 1280,
+   "altura": 1400
+  },
+  {
+   "arquivo": "13-sugestao-de-artigo-v1.1",
+   "largura": 1280,
+   "altura": 860
+  }
+ ],
+ "fluxo": [
+  {
+   "arquivo": "01-painel",
+   "largura": 1280,
+   "altura": 1144
+  },
+  {
+   "arquivo": "02-pedidos",
+   "largura": 1280,
+   "altura": 2626
+  },
+  {
+   "arquivo": "03-detalhe-pedido-com-excecao",
+   "largura": 1280,
+   "altura": 1472
+  },
+  {
+   "arquivo": "04-fila-de-excecoes",
+   "largura": 1280,
+   "altura": 969
+  },
+  {
+   "arquivo": "05-correcao",
+   "largura": 1280,
+   "altura": 1472
+  },
+  {
+   "arquivo": "06-aprovacao-humana",
+   "largura": 1280,
+   "altura": 1469
+  },
+  {
+   "arquivo": "07-gerador",
+   "largura": 1280,
+   "altura": 913
+  },
+  {
+   "arquivo": "08-cadastros",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "09-medicao",
+   "largura": 1280,
+   "altura": 1641
+  },
+  {
+   "arquivo": "10-notificacoes",
+   "largura": 1280,
+   "altura": 2143
+  },
+  {
+   "arquivo": "11-n8n-canvas",
+   "largura": 1280,
+   "altura": 800
+  }
+ ],
+ "mapa": [
+  {
+   "arquivo": "00-login",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "01-lista-diagnosticos",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "02-roteiro-por-area",
+   "largura": 1280,
+   "altura": 2142
+  },
+  {
+   "arquivo": "03-cadastro-de-processo",
+   "largura": 1280,
+   "altura": 1183
+  },
+  {
+   "arquivo": "04-ranking",
+   "largura": 1280,
+   "altura": 1056
+  },
+  {
+   "arquivo": "05-matriz-esforco-retorno",
+   "largura": 1280,
+   "altura": 1015
+  },
+  {
+   "arquivo": "06-premissas-e-faixa-de-retorno",
+   "largura": 1280,
+   "altura": 1177
+  },
+  {
+   "arquivo": "07-relatorio-web",
+   "largura": 1280,
+   "altura": 3675
+  },
+  {
+   "arquivo": "08-formulario-do-cliente",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "09-comparacao-de-versoes",
+   "largura": 1280,
+   "altura": 1068
+  },
+  {
+   "arquivo": "10-versao-mobile-matriz",
+   "largura": 780,
+   "altura": 1688
+  },
+  {
+   "arquivo": "10-versao-mobile-roteiro",
+   "largura": 780,
+   "altura": 1688
+  },
+  {
+   "arquivo": "11-link-do-cliente-consultor",
+   "largura": 1280,
+   "altura": 800
+  },
+  {
+   "arquivo": "12-proposta-v1-1",
+   "largura": 1280,
+   "altura": 1277
+  }
+ ],
+ "termometro": [
+  {
+   "arquivo": "00-login",
+   "largura": 1280,
+   "altura": 900
+  },
+  {
+   "arquivo": "01-painel-executivo",
+   "largura": 1280,
+   "altura": 1363
+  },
+  {
+   "arquivo": "02-contas-em-risco",
+   "largura": 1280,
+   "altura": 3423
+  },
+  {
+   "arquivo": "03-visao-da-conta",
+   "largura": 1280,
+   "altura": 900
+  },
+  {
+   "arquivo": "04-explicacao-do-score",
+   "largura": 1120,
+   "altura": 575
+  },
+  {
+   "arquivo": "05-playbook-na-conta",
+   "largura": 1120,
+   "altura": 1747
+  },
+  {
+   "arquivo": "06-playbooks",
+   "largura": 1280,
+   "altura": 2899
+  },
+  {
+   "arquivo": "07-registro-de-acao",
+   "largura": 552,
+   "altura": 1258
+  },
+  {
+   "arquivo": "08-configuracao-de-pesos",
+   "largura": 1280,
+   "altura": 900
+  },
+  {
+   "arquivo": "09-sensibilidade",
+   "largura": 1280,
+   "altura": 1235
+  },
+  {
+   "arquivo": "10-exportacao-csv",
+   "largura": 1280,
+   "altura": 420
+  },
+  {
+   "arquivo": "11-mobile-painel",
+   "largura": 390,
+   "altura": 2558
+  },
+  {
+   "arquivo": "12-mobile-conta",
+   "largura": 390,
+   "altura": 7326
+  },
+  {
+   "arquivo": "13-alertas-queda-brusca",
+   "largura": 1280,
+   "altura": 1356
+  }
+ ],
+ "ponte": [
+  {
+   "arquivo": "01-crm-negocio-ganho",
+   "largura": 1280,
+   "altura": 861
+  },
+  {
+   "arquivo": "02-erp-cobrancas-criadas",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "03-erp-pedidos-criados",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "04-erp-clientes-criados",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "05-crm-cobranca-paga",
+   "largura": 1280,
+   "altura": 861
+  },
+  {
+   "arquivo": "06-painel-visao-geral",
+   "largura": 1280,
+   "altura": 914
+  },
+  {
+   "arquivo": "07-erp-modo-de-falha",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "08-painel-evento-em-retentativa",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "09-painel-tentativas-e-backoff",
+   "largura": 1280,
+   "altura": 1216
+  },
+  {
+   "arquivo": "10-painel-fila-de-falhas",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "11-painel-reprocessamento",
+   "largura": 1280,
+   "altura": 1609
+  },
+  {
+   "arquivo": "12-painel-divergencias-da-reconciliacao",
+   "largura": 1280,
+   "altura": 860
+  },
+  {
+   "arquivo": "13-painel-mapeamento-de-campos",
+   "largura": 1280,
+   "altura": 1011
+  },
+  {
+   "arquivo": "14-painel-catalogo-de-erros",
+   "largura": 1280,
+   "altura": 3026
+  },
+  {
+   "arquivo": "15-execucao-dos-testes",
+   "largura": 1180,
+   "altura": 1055
+  },
+  {
+   "arquivo": "16-painel-alerta-de-fila-parada",
+   "largura": 1280,
+   "altura": 1351
+  },
+  {
+   "arquivo": "17-painel-alerta-critico",
+   "largura": 1280,
+   "altura": 860
+  }
+ ]
+}

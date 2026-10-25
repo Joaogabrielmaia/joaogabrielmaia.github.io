@@ -63,7 +63,7 @@ export function Contact() {
         setStatus("error");
         setErrorMessage("Erro ao enviar mensagem via FormSubmit. Tente novamente.");
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("FormSubmit fetch error:", err);
       setStatus("error");
       setErrorMessage("Ocorreu um erro ao enviar a mensagem. Verifique sua conexão e tente novamente.");
@@ -72,17 +72,17 @@ export function Contact() {
 
   return (
     <section id="contato" className="py-24 relative overflow-hidden">
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-[#B8FF2C]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-[#F29A0F]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Contato"
           title="Vamos conversar?"
-          description="Estou aberto a oportunidades em Engenharia de Software, Desenvolvimento Full Stack e projetos com Inteligência Artificial."
+          description="Se algum dos meus projetos ou experiências fizer sentido para o seu time, vamos conversar."
           centered
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8 max-w-6xl mx-auto">
+        <div className="slab grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mt-8 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -100,27 +100,27 @@ export function Contact() {
 
               <div className="space-y-4 pt-2">
                 <a
-                  href="mailto:Joaogabrielmaia092@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  href="mailto:joaogabrielmaia092@gmail.com"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
                     <span className="text-xs font-mono text-neutral-400 block">E-mail Direto</span>
                     <span className="text-sm font-bold text-[#0F0F10] group-hover:text-black truncate block">
-                      Joaogabrielmaia092@gmail.com
+                      joaogabrielmaia092@gmail.com
                     </span>
                   </div>
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/joãogabrielmaia"
+                  href="https://www.linkedin.com/in/jo%C3%A3ogabrielmaia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <LinkedinIcon className="w-5 h-5" />
                   </div>
                   <div>
@@ -135,9 +135,9 @@ export function Contact() {
                   href="https://github.com/Joaogabrielmaia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#B8FF2C] hover:shadow-md transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-neutral-200/80 hover:border-[#F29A0F] hover:shadow-md transition-all group"
                 >
-                  <div className="p-3 rounded-xl bg-[#0F0F10] text-[#B8FF2C] shrink-0">
+                  <div className="p-3 rounded-xl bg-[#7a8c57]/20 text-[#4b5a30] shrink-0">
                     <GithubIcon className="w-4 h-4" />
                   </div>
                   <div>
@@ -262,17 +262,17 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full py-4 px-6 rounded-xl bg-[#0F0F10] text-[#FAFAFA] font-bold text-sm hover:bg-black transition-all flex items-center justify-center gap-2 border border-neutral-800 shadow-md group disabled:opacity-60 cursor-pointer"
+                  className="w-full py-4 px-6 rounded-sm bg-[#F29A0F] text-[#161616] font-bold text-sm hover:bg-[#d98200] transition-all flex items-center justify-center gap-2 border-0 shadow-md group disabled:opacity-60 cursor-pointer"
                 >
                   {status === "sending" ? (
                     <>
-                      <span className="w-4 h-4 border-2 border-[#B8FF2C] border-t-transparent rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-[#161616] border-t-transparent rounded-full animate-spin" />
                       <span>Enviando mensagem...</span>
                     </>
                   ) : (
                     <>
                       <span>Enviar mensagem</span>
-                      <Send className="w-4 h-4 text-[#B8FF2C] group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
+                      <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </>
                   )}
                 </button>
